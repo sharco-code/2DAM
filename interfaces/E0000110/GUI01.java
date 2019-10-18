@@ -39,8 +39,6 @@ public class GUI01 {
         panel.setBackground(Color.DARK_GRAY);
         panel.setBounds(2, 2, frame.getWidth()-20, frame.getHeight()-43);
         
-        
-        
         panel.add(textfield);
         panel.add(button);
         panel.add(button2);
