@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Facturacion.View.Menu_View"
+             BackgroundColor="Aquamarine">
+    <ContentPage.Content >
+        <StackLayout BackgroundColor="Azure" Margin="20">
+            <Grid Margin="25" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Menu" FontSize="Large" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"/>
+                <Button Text="Clientes" Grid.Row="2" Grid.Column="0"  Clicked="ButtonClients_Clicked"></Button>
+                <Button Text="Articulos" Grid.Row="3" Grid.Column="0" Clicked="ButtonArticles_Clicked"></Button>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

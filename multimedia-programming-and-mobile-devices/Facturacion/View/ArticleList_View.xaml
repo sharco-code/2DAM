@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Facturacion.View.ArticleList_View"
+             BackgroundColor="Aquamarine"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" IconImageSource="add.png" Text="Añadir" Priority="0" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Margin="25"  BackgroundColor="Azure">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Lista Articulos" FontSize="Large" HorizontalOptions="Center"/>
+            <ListView Margin="20" ItemTapped="ArticleList_ItemTapped" ItemsSource="{Binding ArticleList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Description}" Detail="{Binding PVP}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
