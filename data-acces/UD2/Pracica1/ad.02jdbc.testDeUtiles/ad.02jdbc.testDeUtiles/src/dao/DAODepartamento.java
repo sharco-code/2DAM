@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import jdbc.ConexionJdbc;
 import pojos.Departamento;
 import excepciones.BusinessException;
@@ -16,7 +15,6 @@ public class DAODepartamento {
 	
 	public static List<Departamento> getDepartamentoPorNombre(String texto) throws BusinessException {
 		List<Departamento> list = new ArrayList<Departamento>();
-		
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		Departamento d = null;
