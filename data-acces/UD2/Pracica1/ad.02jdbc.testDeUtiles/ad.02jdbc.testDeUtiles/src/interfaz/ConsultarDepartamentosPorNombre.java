@@ -13,7 +13,7 @@ public class ConsultarDepartamentosPorNombre {
 	private static Scanner scanner = new Scanner(System.in);
 	
 	private static void consultar() {
-		System.out.print("Texto: ");
+		System.out.print("Introduce texto: ");
 		String input = scanner.nextLine();
 		try {
 			List<Departamento> lista = DAODepartamento.getDepartamentoPorNombre(input);
