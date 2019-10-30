@@ -5,7 +5,6 @@ public class Departamento {
 	private String nombre;
 
 	public Departamento(){
-		//Constructor vacio
 	}
 	public Departamento(Integer idDepartamento, String nombre){
 		this.idDepartamento = idDepartamento;
