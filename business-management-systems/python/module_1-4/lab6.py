@@ -1,5 +1,4 @@
 a = int(input("Numero: "))
-
 if a == 1:
     print("Lunes")
 elif a == 2:
