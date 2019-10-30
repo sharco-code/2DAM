@@ -1,0 +1,4 @@
+driverClassName=com.mysql.jdbc.Driver
+url=jdbc:mysql://localhost:3306/inventario?autoReconnect=true&useSSL=false
+username=root
+password=root
