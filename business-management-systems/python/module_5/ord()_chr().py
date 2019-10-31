@@ -1,4 +1,4 @@
-#numero acii
+#numero ascii
 c = 'h'
 print(ord(c))
 
