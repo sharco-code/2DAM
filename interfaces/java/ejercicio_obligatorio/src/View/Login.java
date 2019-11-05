@@ -1,12 +1,35 @@
 package View;
 
+import javax.swing.JButton;
+import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+
 public class Login extends javax.swing.JFrame {
 
     public Login() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+        }
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+        
     }
+
+    public JPanel getPanelPassword() {
+        return PanelPassword;
+    }
+
+    public JPanel getPanelUsername() {
+        return PanelUsername;
+    }
+
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -24,16 +47,14 @@ public class Login extends javax.swing.JFrame {
         jLabelPassword = new javax.swing.JLabel();
         jTextFieldPassword = new javax.swing.JPasswordField();
         PanelSouth = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jButtonLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 400, 300));
-        setMaximumSize(new java.awt.Dimension(500, 400));
         setMinimumSize(new java.awt.Dimension(350, 250));
         setModalExclusionType(null);
         setName("login"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(445, 320));
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
 
@@ -59,7 +80,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 456, Short.MAX_VALUE)
+            .addGap(0, 455, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -120,7 +141,6 @@ public class Login extends javax.swing.JFrame {
         PanelPassword.add(jLabelPassword, gridBagConstraints);
 
         jTextFieldPassword.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextFieldPassword.setText("root");
         jTextFieldPassword.setMinimumSize(new java.awt.Dimension(150, 30));
         jTextFieldPassword.setPreferredSize(new java.awt.Dimension(150, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -134,12 +154,12 @@ public class Login extends javax.swing.JFrame {
 
         PanelSouth.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Entrar");
-        jButton1.setMaximumSize(new java.awt.Dimension(80, 30));
-        jButton1.setMinimumSize(new java.awt.Dimension(80, 30));
-        jButton1.setPreferredSize(new java.awt.Dimension(180, 50));
-        PanelSouth.add(jButton1);
+        jButtonLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButtonLogin.setText("Entrar");
+        jButtonLogin.setMaximumSize(new java.awt.Dimension(80, 30));
+        jButtonLogin.setMinimumSize(new java.awt.Dimension(80, 30));
+        jButtonLogin.setPreferredSize(new java.awt.Dimension(180, 50));
+        PanelSouth.add(jButtonLogin);
 
         MainPanel.add(PanelSouth, java.awt.BorderLayout.SOUTH);
 
@@ -147,16 +167,43 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  
+
+    public void messageERROR(String msg) {
+        JOptionPane.showMessageDialog(
+                null,
+                msg,
+                "INFO",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    public void messageINFO(String msg) {
+        JOptionPane.showMessageDialog(
+                null,
+                msg,
+                "INFO",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public JButton getjButtonLogin() {
+        return jButtonLogin;
+    }
+
+    public JPasswordField getjTextFieldPassword() {
+        return jTextFieldPassword;
+    }
+
+    public JTextField getjTextFieldUsername() {
+        return jTextFieldUsername;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
@@ -164,7 +211,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel PanelPassword;
     private javax.swing.JPanel PanelSouth;
     private javax.swing.JPanel PanelUsername;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonLogin;
     private javax.swing.JLabel jLabelPassword;
     private javax.swing.JLabel jLabelUsername;
     private javax.swing.JPanel jPanel1;

@@ -1,0 +1,8 @@
+{
+	"DataBaseData": [
+		{
+			"driverClassName": "com.mysql.jdbc.Driver",
+			"url": "jdbc:mysql://localhost:3306/interfaces?autoReconnect=true"
+		}
+	]
+}
