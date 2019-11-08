@@ -28,3 +28,4 @@ class PilaSuma(Stack):
 pilaSuma = PilaSuma()
 pilaSuma.push(6)
 print(pilaSuma.pop())
+print(PilaSuma.__dict__)
