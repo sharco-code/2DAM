@@ -1,0 +1,8 @@
+{
+	"DataBase": [
+		{
+			"driverClassName": "com.mysql.jdbc.Driver",
+			"url": "jdbc:mysql://localhost:3306/examen?autoReconnect=true&useSSL=false"
+		}
+	]
+}
