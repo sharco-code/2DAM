@@ -4,12 +4,30 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RegistroCitas.View.RegisterView">
+             x:Class="RegistroCitas.View.RegisterView"
+             BackgroundColor="DarkRed">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="#262626" Margin="10">
+            <Label Text="Registro" FontSize="Title"></Label>
+            <Grid Margin="35">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitio>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitio/ns>
+
+                <Label Text="Nombre:" TextColor="White" Grid.Row="0" Grid.Column="0"></Label>
+                <Entry Text="{Binding Client.Name}" TextColor="White" Grid.Row="0" Grid.Column="1"></Entry>
+
+                <Label Text="Apellidos:" TextColor="White" Grid.Row="1" Grid.Column="0"></Label>
+                <Entry Text="{Binding Client.Surnames}" TextColor="White" Grid.Row="1" Grid.Column="1"></Entry>
+
+            </Grid>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

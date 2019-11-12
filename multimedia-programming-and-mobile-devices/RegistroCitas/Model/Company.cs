@@ -14,4 +14,4 @@ namespace RegistroCitas.Model {
         public List<Medic> Medics {get; set;}
     }
 }
-}
+

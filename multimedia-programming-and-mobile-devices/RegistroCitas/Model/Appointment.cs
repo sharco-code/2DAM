@@ -7,6 +7,7 @@ using System.Text;
 namespace RegistroCitas.Model {
     public class Appointment {
         [PrimaryKey, AutoIncrement]
+        public int IdAppointment { get; set; }
         public int IdCompany { get; set; }
         public DateTime Date { get; set; }
 
