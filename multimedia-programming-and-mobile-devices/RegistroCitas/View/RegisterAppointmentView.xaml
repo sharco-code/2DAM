@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RegistroCitas.View.RegisterAppointmentView"
+             BackgroundColor="DarkRed"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="#262626" Margin="10" VerticalOptions="FillAndExpand">
+            <Label Text="Registrar Cita" FontSize="Title" TextColor="White" HorizontalOptions="Center" Margin="30"></Label>
+
+
+            <StackLayout Margin="15" BackgroundColor="#343434">
+                <Grid Margin="8">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Picker Title="Selecciona una compañia" TextColor="White" BackgroundColor="Black" ItemsSource="{Binding Names}" Grid.Row="0" Grid.Column="0"></Picker>
+
+                    <Picker Title="Selecciona médico" TextColor="White" BackgroundColor="Black" ItemsSource="{Binding Names}" Grid.Row="1" Grid.Column="0"></Picker>
+
+                    <Picker Title="Selecciona especialidad" TextColor="White" BackgroundColor="Black" ItemsSource="{Binding Names}" Grid.Row="2" Grid.Column="0"></Picker>
+
+                </Grid>
+            </StackLayout>
+            <Grid Margin="15" VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Registrar Cita" FontSize="Large" Clicked="OK_Clicked" Grid.Column="0" TextColor="White" BackgroundColor="#A20404"></Button>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

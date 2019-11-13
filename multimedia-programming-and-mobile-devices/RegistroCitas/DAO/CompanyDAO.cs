@@ -29,6 +29,12 @@ namespace RegistroCitas.DAO {
         {
             connection.DeleteAsync(company).Wait();
         }
+
+        internal List<Company> getAll()
+        {
+            List<Company> result = connection.QueryAsync<Company>("SELECT * from Company").Result;
+            return result;
+        }
         public ObservableCollection<Company> GetArticles()
         {
             var l = connection.Table<Company>().ToListAsync().Result;

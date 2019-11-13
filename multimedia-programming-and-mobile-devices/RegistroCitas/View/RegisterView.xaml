@@ -5,29 +5,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="RegistroCitas.View.RegisterView"
-             BackgroundColor="DarkRed">
+             BackgroundColor="DarkRed"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#262626" Margin="10">
-            <Label Text="Registro" FontSize="Title"></Label>
+        <StackLayout BackgroundColor="#262626" Margin="10" VerticalOptions="FillAndExpand">
+            <Label Text="Registro" FontSize="Title" TextColor="White" HorizontalOptions="Center" Margin="30"></Label>
             <Grid Margin="35">
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitio>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitio/ns>
+                </Grid.ColumnDefinitions>
 
-                <Label Text="Nombre:" TextColor="White" Grid.Row="0" Grid.Column="0"></Label>
-                <Entry Text="{Binding Client.Name}" TextColor="White" Grid.Row="0" Grid.Column="1"></Entry>
+                <Label Text="DNI:" TextColor="White" Grid.Row="0" Grid.Column="0"></Label>
+                <Entry Text="{Binding Patient.DNI}" BackgroundColor="#262626" TextColor="White" Grid.Row="0" Grid.Column="1"></Entry>
 
-                <Label Text="Apellidos:" TextColor="White" Grid.Row="1" Grid.Column="0"></Label>
-                <Entry Text="{Binding Client.Surnames}" TextColor="White" Grid.Row="1" Grid.Column="1"></Entry>
+                <Label Text="Nombre:" TextColor="White"  Grid.Row="1" Grid.Column="0"></Label>
+                <Entry Text="{Binding Patient.Name}" BackgroundColor="#262626" TextColor="White" Grid.Row="1" Grid.Column="1"></Entry>
+
+                <Label Text="Apellidos:" TextColor="White"  Grid.Row="2" Grid.Column="0"></Label>
+                <Entry Text="{Binding Patient.Surnames}" BackgroundColor="#262626" TextColor="White" Grid.Row="2" Grid.Column="1"></Entry>
+
+                <Label Text="Dirección:" TextColor="White"  Grid.Row="3" Grid.Column="0"></Label>
+                <Entry Text="{Binding Patient.Adress}" BackgroundColor="#262626" TextColor="White" Grid.Row="3" Grid.Column="1"></Entry>
+
+                <Label Text="Email:" TextColor="White"  Grid.Row="4" Grid.Column="0"></Label>
+                <Entry Text="{Binding Patient.Email}" BackgroundColor="#262626" TextColor="White" Grid.Row="4" Grid.Column="1"></Entry>
 
             </Grid>
+            <Grid Margin="35" VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
 
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Registarse" FontSize="Large" Clicked="OK_Clicked" Grid.Column="0" TextColor="White" BackgroundColor="#A20404"></Button>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

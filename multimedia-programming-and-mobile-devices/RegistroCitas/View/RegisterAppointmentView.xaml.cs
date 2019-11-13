@@ -10,15 +10,17 @@ using Xamarin.Forms.Xaml;
 
 namespace RegistroCitas.View {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegisterView : ContentPage {
-        public RegisterView()
+    public partial class RegisterAppointmentView : ContentPage {
+
+        public CrudEvents Events = new CrudEvents();
+        public RegisterAppointmentView()
         {
             InitializeComponent();
         }
 
         private void OK_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MenuView());
+
         }
     }
 }
