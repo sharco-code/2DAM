@@ -8,6 +8,7 @@
   <ItemGroup>
     <None Remove="DAO\MedicPertainDAO.cs~RF1fc1c2.TMP" />
     <None Remove="Model\Appointment.cs~RF1a4e9e.TMP" />
+    <None Remove="Model\Specialty.cs~RFd71547.TMP" />
     <None Remove="Model\Test.cs~RF517316e.TMP" />
     <None Remove="ViewModel\MenuViewModel.cs~RF4d91e51.TMP" />
   </ItemGroup>

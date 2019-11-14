@@ -11,9 +11,10 @@ namespace RegistroCitas.Model {
         public string Name { get; set; }
         public string Surnames { get; set; }
         public string DNI { get; set; }
-        public string Specialty { get; set; }
+        [ForeignKey(typeof(Specialty))]
+        public int IdSpecialty { get; set; }
 
         [ManyToMany(typeof(Company))]
-        public List<Company> Companies { get; set; }
+        public int IdCompany { get; set; }
     }
 }

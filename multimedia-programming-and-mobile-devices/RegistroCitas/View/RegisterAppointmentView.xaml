@@ -27,11 +27,11 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <Picker Title="Selecciona una compañia" TextColor="White" BackgroundColor="Black" ItemsSource="{Binding Names}" Grid.Row="0" Grid.Column="0"></Picker>
+                    <Picker Title="Selecciona una compañia" x:Name="CompanyPicker" TextColor="White" BackgroundColor="Black" ItemsSource="{Binding CompanyNames}" Grid.Row="0" Grid.Column="0"></Picker>
 
-                    <Picker Title="Selecciona médico" TextColor="White" BackgroundColor="Black" ItemsSource="{Binding Names}" Grid.Row="1" Grid.Column="0"></Picker>
-
-                    <Picker Title="Selecciona especialidad" TextColor="White" BackgroundColor="Black" ItemsSource="{Binding Names}" Grid.Row="2" Grid.Column="0"></Picker>
+                    <Picker Title="Selecciona especialidad" x:Name="SpecialtyPicker" IsEnabled="False" TextColor="White" BackgroundColor="Black" ItemsSource="{Binding SpecialtyNames}" Grid.Row="1" Grid.Column="0"></Picker>
+                    
+                    <Picker Title="Selecciona médico" x:Name="MedicPicker" IsEnabled="False" TextColor="White" BackgroundColor="Black" Grid.Row="2" Grid.Column="0"></Picker>
 
                 </Grid>
             </StackLayout>
@@ -42,9 +42,11 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Button Text="Registrar Cita" FontSize="Large" Clicked="OK_Clicked" Grid.Column="0" TextColor="White" BackgroundColor="#A20404"></Button>
+                    <Button Text="Registrar Cita" FontSize="Large" Clicked="OK_Clicked" Grid.Column="0" TextColor="White" BackgroundColor="#A20404"></Button>
+                    <Button Text="Cancelar" FontSize="Large" Clicked="CANCEL_Clicked" Grid.Column="1" TextColor="White" BackgroundColor="#A20404"></Button>
 
             </Grid>
         </StackLayout>

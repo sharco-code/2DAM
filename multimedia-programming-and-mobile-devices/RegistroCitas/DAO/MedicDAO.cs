@@ -29,6 +29,18 @@ namespace RegistroCitas.DAO {
         {
             connection.DeleteAsync(medic).Wait();
         }
+        internal List<Medic> getAll()
+        {
+            List<Medic> result = connection.QueryAsync<Medic>("SELECT * from Medic").Result;
+            return result;
+        }
+        
+        internal List<Medic> getAllFromCompanyAndSpecialty(String companyName, String specialtyName)
+        {
+            List<Medic> result = connection.QueryAsync<Medic>("SELECT Medic.IdMedic, Medic.Name, Medic.Surnames, Medic.DNI, Medic.IdSpecialty from Medic, MedicPertain, Company, Specialty WHERE Medic.IdMedic like MedicPertain.IdMedic and Company.IdCompany like MedicPertain.IdCompany and Medic.IdSpecialty like Specialty.IdSpecialty and Specialty.Name like \""+specialtyName+"\" and Company.Name like\""+companyName+"\"").Result;
+            return result;
+        }
+        
         public ObservableCollection<Medic> GetArticles()
         {
             var l = connection.Table<Medic>().ToListAsync().Result;
