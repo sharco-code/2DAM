@@ -12,5 +12,16 @@ namespace RegistroCitas.Model {
         public String Surnames { get; set; }
         public String Adress { get; set; }
         public String Email { get; set; }
+
+        public Patient() { }
+        public Patient(int IdPatient, String DNI, String Name, String Surnames, String Adress, String Email)
+        {
+            this.IdPatient = IdPatient;
+            this.DNI = DNI;
+            this.Name = Name;
+            this.Surnames = Surnames;
+            this.Adress = Adress;
+            this.Email = Email;
+        }
     }
 }

@@ -14,5 +14,10 @@ namespace RegistroCitas.View {
         {
             InitializeComponent();
         }
+
+        private void BACK_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

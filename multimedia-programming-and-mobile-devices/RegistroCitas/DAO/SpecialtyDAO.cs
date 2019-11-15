@@ -10,7 +10,6 @@ namespace RegistroCitas.DAO {
         public SpecialtyDAO(string dbpath)
         {
             connection = new SQLiteAsyncConnection(dbpath);
-            connection.CreateTableAsync<Specialty>().Wait();
         }
         internal List<Specialty> getAll()
         {

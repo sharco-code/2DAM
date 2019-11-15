@@ -12,8 +12,20 @@
         <StackLayout BackgroundColor="#262626" Margin="10" VerticalOptions="FillAndExpand">
             <Label Text="Citas" FontSize="Title" TextColor="White" HorizontalOptions="Center" Margin="30"></Label>
 
-            
 
+            <Grid Margin="15" VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Volver" x:Name="CancelButton" FontSize="Large" Clicked="BACK_Clicked" Grid.Column="0" TextColor="White" BackgroundColor="#A20404"></Button>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

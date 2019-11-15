@@ -11,7 +11,6 @@ namespace RegistroCitas.ViewModel {
 
         private CompanyDAO companyDAO = new CompanyDAO(Config.Database);
         private MedicDAO medicDAO = new MedicDAO(Config.Database);
-        private MedicPertainDAO medicPertainDAO = new MedicPertainDAO(Config.Database);
         private SpecialtyDAO specialtyDAO = new SpecialtyDAO(Config.Database);
 
         public IList<string> CompanyNames {
@@ -25,18 +24,6 @@ namespace RegistroCitas.ViewModel {
                
                 return lst;
             }
-        }
-
-        public List<String> getMedicFiltered(String companyName, String specialtyName)
-        {
-
-            List<Medic> medics = medicDAO.getAllFromCompanyAndSpecialty(companyName, specialtyName);
-            List<string> lst = new List<string>();
-            foreach (Medic m in medics)
-            {
-                lst.Add(m.Name);
-            }
-            return lst;
         }
 
         public IList<string> MedicNames

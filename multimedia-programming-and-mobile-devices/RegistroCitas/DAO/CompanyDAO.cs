@@ -11,23 +11,36 @@ namespace RegistroCitas.DAO {
         public CompanyDAO(string dbpath)
         {
             connection = new SQLiteAsyncConnection(dbpath);
-            connection.CreateTableAsync<Company>().Wait();
         }
 
-        internal void save(Company company)
+        internal void insert(Company company)
         {
-            if (company.IdCompany != 0)
-            {
-                connection.UpdateAsync(company);
-            }
-            else
-            {
+
                 connection.InsertAsync(company);
-            }
+
+        }
+        internal void update(Company company)
+        {
+
+                connection.UpdateAsync(company);
+
         }
         internal void delete(Company company)
         {
             connection.DeleteAsync(company).Wait();
+        }
+
+        internal int getIdByName(String name)
+        {
+            List<Company> result = connection.QueryAsync<Company>("SELECT * FROM Company WHERE Name Like \""+name+"\"").Result;
+            if ((result == null) || (result.Count == 0))
+            {
+                return -1;
+            } else
+            {
+                return result[0].IdCompany;
+            }
+            
         }
 
         internal List<Company> getAll()

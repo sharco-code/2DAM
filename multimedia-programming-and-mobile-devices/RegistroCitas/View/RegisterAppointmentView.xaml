@@ -7,8 +7,9 @@
              x:Class="RegistroCitas.View.RegisterAppointmentView"
              BackgroundColor="DarkRed"
              NavigationPage.HasNavigationBar="False">
+    
     <ContentPage.Content>
-
+        
         <StackLayout BackgroundColor="#262626" Margin="10" VerticalOptions="FillAndExpand">
             <Label Text="Registrar Cita" FontSize="Title" TextColor="White" HorizontalOptions="Center" Margin="30"></Label>
 
@@ -45,10 +46,11 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                    <Button Text="Registrar Cita" FontSize="Large" Clicked="OK_Clicked" Grid.Column="0" TextColor="White" BackgroundColor="#A20404"></Button>
-                    <Button Text="Cancelar" FontSize="Large" Clicked="CANCEL_Clicked" Grid.Column="1" TextColor="White" BackgroundColor="#A20404"></Button>
+                    <Button Text="Registrar Cita" x:Name="OKButton" FontSize="Large" IsEnabled="False" Clicked="OK_Clicked" Grid.Column="1" TextColor="White" BackgroundColor="#A20404"></Button>
+                    <Button Text="Cancelar" x:Name="CancelButton" FontSize="Large" Clicked="CANCEL_Clicked" Grid.Column="0" TextColor="White" BackgroundColor="#A20404"></Button>
 
             </Grid>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

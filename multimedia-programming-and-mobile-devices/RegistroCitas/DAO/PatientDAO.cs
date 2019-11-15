@@ -11,19 +11,31 @@ namespace RegistroCitas.DAO {
         public PatientDAO(string dbpath)
         {
             connection = new SQLiteAsyncConnection(dbpath);
-            connection.CreateTableAsync<Patient>().Wait();
         }
 
-        internal void save(Patient patient)
+        internal void insert(Patient patient)
         {
-            if (patient.IdPatient != 0)
-            {
-                connection.UpdateAsync(patient);
-            }
-            else
+            try
             {
                 connection.InsertAsync(patient);
             }
+            catch
+            {
+                throw new Exception();
+            }
+
+        }
+        internal void update(Patient patient)
+        {
+            try
+            {
+                connection.UpdateAsync(patient);
+            }
+            catch
+            {
+                throw new Exception();
+            }
+
         }
         internal void delete(Patient patient)
         {
@@ -33,6 +45,18 @@ namespace RegistroCitas.DAO {
         {
             var l = connection.Table<Patient>().ToListAsync().Result;
             return new ObservableCollection<Patient>(l);
+        }
+        internal bool hasPatient()
+        {
+            List<Company> result = connection.QueryAsync<Company>("SELECT * FROM Patient").Result;
+            if ((result == null) || (result.Count == 0))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

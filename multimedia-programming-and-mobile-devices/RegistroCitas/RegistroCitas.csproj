@@ -8,12 +8,15 @@
   <ItemGroup>
     <None Remove="DAO\MedicPertainDAO.cs~RF1fc1c2.TMP" />
     <None Remove="Model\Appointment.cs~RF1a4e9e.TMP" />
+    <None Remove="Model\Appointment.cs~RFcea5ac.TMP" />
+    <None Remove="Model\Appointment.cs~RFe87a29.TMP" />
     <None Remove="Model\Specialty.cs~RFd71547.TMP" />
     <None Remove="Model\Test.cs~RF517316e.TMP" />
     <None Remove="ViewModel\MenuViewModel.cs~RF4d91e51.TMP" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />

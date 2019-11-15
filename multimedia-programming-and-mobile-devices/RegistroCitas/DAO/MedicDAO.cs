@@ -11,7 +11,6 @@ namespace RegistroCitas.DAO {
         public MedicDAO(string dbpath)
         {
             connection = new SQLiteAsyncConnection(dbpath);
-            connection.CreateTableAsync<Medic>().Wait();
         }
 
         internal void save(Medic medic)
@@ -40,7 +39,30 @@ namespace RegistroCitas.DAO {
             List<Medic> result = connection.QueryAsync<Medic>("SELECT Medic.IdMedic, Medic.Name, Medic.Surnames, Medic.DNI, Medic.IdSpecialty from Medic, MedicPertain, Company, Specialty WHERE Medic.IdMedic like MedicPertain.IdMedic and Company.IdCompany like MedicPertain.IdCompany and Medic.IdSpecialty like Specialty.IdSpecialty and Specialty.Name like \""+specialtyName+"\" and Company.Name like\""+companyName+"\"").Result;
             return result;
         }
-        
+        public List<String> getMedicNamesFiltered(String companyName, String specialtyName)
+        {
+
+            List<Medic> medics = getAllFromCompanyAndSpecialty(companyName, specialtyName);
+            List<string> lst = new List<string>();
+            foreach (Medic m in medics)
+            {
+                lst.Add(m.Name+" "+m.Surnames);
+            }
+            return lst;
+        }
+        internal int getIdByName(String name)
+        {
+            List<Medic> result = connection.QueryAsync<Medic>("SELECT * FROM Medic WHERE name Like \"" + name + "\"").Result;
+            if ((result == null) || (result.Count == 0))
+            {
+                return -1;
+            }
+            else
+            {
+                return result[0].IdMedic;
+            }
+
+        }
         public ObservableCollection<Medic> GetArticles()
         {
             var l = connection.Table<Medic>().ToListAsync().Result;

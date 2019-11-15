@@ -10,7 +10,6 @@ namespace RegistroCitas.DAO {
         public MedicPertainDAO(string dbpath)
         {
             connection = new SQLiteAsyncConnection(dbpath);
-            connection.CreateTableAsync<MedicPertain>().Wait();
         }
     }
 }

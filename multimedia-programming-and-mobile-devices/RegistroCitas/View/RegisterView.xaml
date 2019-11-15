@@ -25,19 +25,19 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Text="DNI:" TextColor="White" Grid.Row="0" Grid.Column="0"></Label>
-                <Entry Text="{Binding Patient.DNI}" BackgroundColor="#262626" TextColor="White" Grid.Row="0" Grid.Column="1"></Entry>
+                <Entry x:Name="EntryDNI" BackgroundColor="#262626" TextColor="White" Grid.Row="0" Grid.Column="1"></Entry>
 
                 <Label Text="Nombre:" TextColor="White"  Grid.Row="1" Grid.Column="0"></Label>
-                <Entry Text="{Binding Patient.Name}" BackgroundColor="#262626" TextColor="White" Grid.Row="1" Grid.Column="1"></Entry>
+                <Entry x:Name="EntryName" BackgroundColor="#262626" TextColor="White" Grid.Row="1" Grid.Column="1"></Entry>
 
                 <Label Text="Apellidos:" TextColor="White"  Grid.Row="2" Grid.Column="0"></Label>
-                <Entry Text="{Binding Patient.Surnames}" BackgroundColor="#262626" TextColor="White" Grid.Row="2" Grid.Column="1"></Entry>
+                <Entry x:Name="EntrySurnames" BackgroundColor="#262626" TextColor="White" Grid.Row="2" Grid.Column="1"></Entry>
 
                 <Label Text="Dirección:" TextColor="White"  Grid.Row="3" Grid.Column="0"></Label>
-                <Entry Text="{Binding Patient.Adress}" BackgroundColor="#262626" TextColor="White" Grid.Row="3" Grid.Column="1"></Entry>
+                <Entry x:Name="EntryAdress" BackgroundColor="#262626" TextColor="White" Grid.Row="3" Grid.Column="1"></Entry>
 
                 <Label Text="Email:" TextColor="White"  Grid.Row="4" Grid.Column="0"></Label>
-                <Entry Text="{Binding Patient.Email}" BackgroundColor="#262626" TextColor="White" Grid.Row="4" Grid.Column="1"></Entry>
+                <Entry x:Name="EntryEmail" BackgroundColor="#262626" TextColor="White" Grid.Row="4" Grid.Column="1"></Entry>
 
             </Grid>
             <Grid Margin="35" VerticalOptions="EndAndExpand">

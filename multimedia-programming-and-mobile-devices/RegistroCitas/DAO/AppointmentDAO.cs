@@ -11,19 +11,26 @@ namespace RegistroCitas.DAO {
         public AppointmentDAO(string dbpath)
         {
             connection = new SQLiteAsyncConnection(dbpath);
-            connection.CreateTableAsync<Appointment>().Wait();
         }
 
-        internal void Save(Appointment appointment)
+        internal void insert(Appointment appointment)
         {
-            if (appointment.IdAppointment != 0)
+            try {
+                connection.InsertAsync(appointment);
+            } catch {
+                throw new Exception();
+            }
+            
+        }
+        internal void update(Appointment appointment)
+        {
+            try
             {
                 connection.UpdateAsync(appointment);
-            }
-            else
-            {
-                connection.InsertAsync(appointment);
-            }
+            } catch {
+                throw new Exception();
+          }
+
         }
         internal void Delete(Appointment appointment)
         {

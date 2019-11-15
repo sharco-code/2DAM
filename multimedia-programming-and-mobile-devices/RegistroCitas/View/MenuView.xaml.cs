@@ -1,4 +1,5 @@
-﻿using RegistroCitas.ViewModel;
+﻿using RegistroCitas.Model;
+using RegistroCitas.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ using Xamarin.Forms.Xaml;
 namespace RegistroCitas.View {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuView : ContentPage {
+
+        public static Patient Patient { get; set; }
         public MenuView()
         {
             InitializeComponent();
@@ -27,7 +30,10 @@ namespace RegistroCitas.View {
 
         private void MANAGE_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new ManageAppointmentView
+            {
+                BindingContext = new ManageAppointmentViewModel()
+            });
         }
     }
 }
