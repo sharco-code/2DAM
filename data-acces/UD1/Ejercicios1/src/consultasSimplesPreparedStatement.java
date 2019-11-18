@@ -8,7 +8,6 @@ import java.util.Scanner;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbcp2.BasicDataSourceFactory;
 
-
 public class consultasSimplesPreparedStatement {
 
 private static Scanner scanner = new Scanner(System.in);
