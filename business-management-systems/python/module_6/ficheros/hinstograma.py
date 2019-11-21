@@ -1,5 +1,4 @@
-import string 
-
+import string, operator
 
 class Histograma:
 
@@ -31,5 +30,6 @@ class Histograma:
 programa = Histograma('documento.txt')
 diccionario = programa.histograma()
 
-for clave in diccionario:
-    print("Numero de '",clave,"': ",diccionario[clave], sep='')
+for clave in sorted(diccionario.items(), key=operator.itemgetter(1), reverse=True):
+    #print(clave)
+    print("Numero de '",clave[0],"': ",clave[1], sep='')
