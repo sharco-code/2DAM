@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RegistroCitas.View.RegisterAppointmentView"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="DarkGray">
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="FillAndExpand" Margin="20">
+            <Label Text="Registrar Cita" FontSize="Title" HorizontalOptions="Center" Margin="30"></Label>
+
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.05*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Padding="10" x:Name="REFRESHButton"  Source="Assets/refresh.png" Clicked="REFRESH_Clicked" Grid.Row="0" Grid.Column="3" BorderColor="Black" BorderWidth="2" AnchorX="200" AnchorY="200"></ImageButton>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Margin="15">
+                <Grid Margin="8">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Selecciona una compañia:" FontSize="Body" Grid.Row="0" Grid.Column="0"></Label>
+                    <Picker x:Name="CompanyPicker" ItemsSource="{Binding CompanyNames}" Grid.Row="0" Grid.Column="1"></Picker>
+
+                    <Label Text="Selecciona una especialidad:" FontSize="Body" Grid.Row="1" Grid.Column="0"></Label>
+                    <Picker x:Name="SpecialtyPicker" IsEnabled="False" ItemsSource="{Binding SpecialtyNames}" Grid.Row="1" Grid.Column="1"></Picker>
+
+                    <Label Text="Selecciona el médico deseado:" FontSize="Body" Grid.Row="2" Grid.Column="0"></Label>
+                    <Picker x:Name="MedicPicker" IsEnabled="False" Grid.Row="2" Grid.Column="1"></Picker>
+
+                    <Label Text="Selecciona una fecha:" FontSize="Body" Grid.Row="3" Grid.Column="0"></Label>
+                    <DatePicker MinimumDate="{Binding MinDate}" x:Name="DatePicker" IsEnabled="False" Grid.Row="3" Grid.Column="1" DateSelected="DatePickerSELECTED"></DatePicker>
+<!--
+                    <Label Text="Selecciona una fecha:" FontSize="Body" Grid.Row="4" Grid.Column="0"></Label>
+                    <TimePicker  x:Name="TimePicker" IsEnabled="False" Time="09:00" Format="" Grid.Row="4" Grid.Column="1" PropertyChanged="TimePickerSELECTED" ></TimePicker>
+                    -->
+                    
+                </Grid>
+
+                <StackLayout Margin="1">
+                    <Grid Margin="0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Hora:" FontSize="Body" Grid.Row="0" Grid.Column="0"></Label>
+                        <Picker x:Name="HourPicker" ItemsSource="{Binding Hours}" IsEnabled="False" Grid.Row="1" Grid.Column="0"></Picker>
+
+                        <Label Text="Minutos:" FontSize="Body" Grid.Row="0" Grid.Column="1"></Label>
+                        <Picker x:Name="MinutPicker" ItemsSource="{Binding Minuts}" IsEnabled="False" Grid.Row="1" Grid.Column="1"></Picker>
+
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+            <Grid Margin="15" VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Registrar Cita" x:Name="OKButton" FontSize="Large" IsEnabled="False" Clicked="OK_Clicked" Grid.Column="1"></Button>
+                <Button Text="Cancelar" x:Name="CancelButton" FontSize="Large" Clicked="CANCEL_Clicked" Grid.Column="0"></Button>
+
+            </Grid>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

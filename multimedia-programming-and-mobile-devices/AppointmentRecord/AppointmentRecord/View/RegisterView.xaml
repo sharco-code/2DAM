@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RegistroCitas.View.RegisterView"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="DarkGray">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Margin="20" >
+            <Label Text="Registro" FontSize="Title" HorizontalOptions="Center" Margin="30"></Label>
+            <Grid Margin="35">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="DNI:"  Grid.Row="0" Grid.Column="0"></Label>
+                <Entry x:Name="EntryDNI"  Grid.Row="0" Grid.Column="1"></Entry>
+
+                <Label Text="Nombre:"   Grid.Row="1" Grid.Column="0"></Label>
+                <Entry x:Name="EntryName"  Grid.Row="1" Grid.Column="1"></Entry>
+
+                <Label Text="Apellidos:"  Grid.Row="2" Grid.Column="0"></Label>
+                <Entry x:Name="EntrySurnames"  Grid.Row="2" Grid.Column="1"></Entry>
+
+                <Label Text="Dirección:"  Grid.Row="3" Grid.Column="0"></Label>
+                <Entry x:Name="EntryAdress"  Grid.Row="3" Grid.Column="1"></Entry>
+
+                <Label Text="Email:"  Grid.Row="4" Grid.Column="0"></Label>
+                <Entry x:Name="EntryEmail"  Grid.Row="4" Grid.Column="1"></Entry>
+
+            </Grid>
+            <Grid Margin="35" VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Registarse" FontSize="Large" Clicked="OK_Clicked" Grid.Column="0"></Button>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
