@@ -175,6 +175,9 @@ namespace RegistroCitas.View {
             HourPicker.SelectedIndex = -1;
             HourPicker.IsEnabled = false;
 
+            DatePicker.Date = default;
+            DatePicker.IsEnabled = false;
+            DatePicker.Date = default;
             DatePicker.IsEnabled = false;
 
             MedicPicker.SelectedIndex = -1;
@@ -182,7 +185,7 @@ namespace RegistroCitas.View {
 
             SpecialtyPicker.SelectedIndex = -1;
             SpecialtyPicker.IsEnabled = false;
-            
+
             OKButton.IsEnabled = false;
         }
 

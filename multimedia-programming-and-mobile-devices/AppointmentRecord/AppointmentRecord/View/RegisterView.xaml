@@ -5,8 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="RegistroCitas.View.RegisterView"
-             NavigationPage.HasNavigationBar="False"
-             BackgroundColor="DarkGray">
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" Margin="20" >
             <Label Text="Registro" FontSize="Title" HorizontalOptions="Center" Margin="30"></Label>

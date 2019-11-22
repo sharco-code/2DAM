@@ -5,23 +5,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="RegistroCitas.View.RegisterAppointmentView"
-             NavigationPage.HasNavigationBar="False"
-             BackgroundColor="DarkGray">
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
 
         <StackLayout VerticalOptions="FillAndExpand" Margin="20">
             <Label Text="Registrar Cita" FontSize="Title" HorizontalOptions="Center" Margin="30"></Label>
 
-            <StackLayout>
+            <StackLayout Margin="15">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="0.2*"></ColumnDefinition>
                         <ColumnDefinition Width="0.25*"></ColumnDefinition>
-                        <ColumnDefinition Width="0.05*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <ImageButton Padding="10" x:Name="REFRESHButton"  Source="Assets/refresh.png" Clicked="REFRESH_Clicked" Grid.Row="0" Grid.Column="3" BorderColor="Black" BorderWidth="2" AnchorX="200" AnchorY="200"></ImageButton>
                 </Grid>

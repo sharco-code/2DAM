@@ -6,8 +6,7 @@
              mc:Ignorable="d"
              x:Class="RegistroCitas.View.MenuView"
              NavigationPage.HasNavigationBar="False"
-             NavigationPage.HasBackButton="False"
-             BackgroundColor="DarkGray">
+             NavigationPage.HasBackButton="False">
     <ContentPage.Content>
 
         <StackLayout VerticalOptions="FillAndExpand" Margin="20">

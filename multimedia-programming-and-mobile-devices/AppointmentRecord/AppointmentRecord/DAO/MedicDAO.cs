@@ -67,7 +67,18 @@ namespace RegistroCitas.DAO {
             {
                 return result[0].IdMedic;
             }
-
+        }
+        internal Medic getMedicById(int id)
+        {
+            List<Medic> result = connection.QueryAsync<Medic>("SELECT * FROM Medic WHERE IdMedic like "+id).Result;
+            if ((result == null) || (result.Count == 0))
+            {
+                return null;
+            }
+            else
+            {
+                return result[0];
+            }
         }
         public ObservableCollection<Medic> GetMedics()
         {

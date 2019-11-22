@@ -5,13 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="RegistroCitas.View.ManageAppointmentView"
-             NavigationPage.HasNavigationBar="False"
-             BackgroundColor="DarkGray">
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
 
         <StackLayout VerticalOptions="FillAndExpand" Margin="20">
             <Label Text="Citas pendientes" FontSize="Title" HorizontalOptions="Center" Margin="1,4"></Label>
-            
+
             <ListView Margin="0" ItemTapped="Appointment_ItemTapped" ItemsSource="{Binding Appointments}" VerticalScrollBarVisibility="Always">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -39,28 +38,13 @@
                                 <Label VerticalOptions="Center"         
                                     VerticalTextAlignment="Center" 
                                     Text="{Binding Date}"
-                                    FontSize="Medium"/> 
+                                    FontSize="Medium"/>
                             </StackLayout>
                         </ViewCell>
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-            <Grid Margin="15" VerticalOptions="EndAndExpand">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                
-                <Button Text="Cancelar" x:Name="CancelButton" FontSize="Large" Clicked="CANCEL_Clicked" Grid.Column="0"></Button>
-
-            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
