@@ -164,7 +164,7 @@ namespace RegistroCitas.View {
             await Navigation.PopAsync();
         }
 
-        private void REFRESH_Clicked(object sender, EventArgs e)
+        private void x()
         {
             CompanyPicker.SelectedIndex = -1;
             CompanyPicker.IsEnabled = true;
@@ -177,8 +177,6 @@ namespace RegistroCitas.View {
 
             DatePicker.Date = default;
             DatePicker.IsEnabled = false;
-            DatePicker.Date = default;
-            DatePicker.IsEnabled = false;
 
             MedicPicker.SelectedIndex = -1;
             MedicPicker.IsEnabled = false;
@@ -187,6 +185,11 @@ namespace RegistroCitas.View {
             SpecialtyPicker.IsEnabled = false;
 
             OKButton.IsEnabled = false;
+        }
+
+        private void REFRESH_Clicked(object sender, EventArgs e)
+        {
+            x();x();
         }
 
         private void DatePickerSELECTED(object sender, DateChangedEventArgs e)
