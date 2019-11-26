@@ -1,11 +1,11 @@
 /* Add application styles & imports to this file! */
 * {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: dimgray;
+  background-color: mediumaquamarine;
 }
 p {
-  color: chocolate;
-  background-color: gainsboro;
+  color: black;
+  background-color: palegreen;
   padding: 1%;
 }
 

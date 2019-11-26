@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Jose';
+  day = Date();
+  num = 322.465;
+  person:any = {
+    name:"Jose",
+    age:20
+  };
 }
