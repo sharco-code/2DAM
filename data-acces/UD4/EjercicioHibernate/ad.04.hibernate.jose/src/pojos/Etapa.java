@@ -1,11 +1,23 @@
 package pojos;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Etapa {
+	@Id
+	@Column
 	private Integer netapa;
+	@Column
 	private Integer kn;
+	@Column
 	private String salida;
+	@Column
 	private String llegada;
+	@Column
 	private Integer dorsal;
+	
 	public Etapa() {
 	}
 	public Etapa(Integer netapa, Integer kn, String salida, String llegada, Integer dorsal) {

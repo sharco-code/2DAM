@@ -1,20 +1,38 @@
 package pojos;
 
-public class Ciclista {
+import java.io.Serializable;
+import javax.persistence.*;
+
+@Entity
+public class Ciclista implements Serializable {
+	@Id
+	@Column
 	private Integer dorsal;
+	@Column
 	private String nombre;
-	private String nomeq;
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn (name="nomeq")
+	private Equipo equipo;
+	@Column
 	private String nacimiento;
+	@Column
 	private String nomrep;
 	
 	public Ciclista() {}
-	public Ciclista(Integer dorsal, String nombre, String nomeq, String nacimiento, String nomrep) {
+	public Ciclista(Integer dorsal, String nombre, String nacimiento, String nomrep, Equipo equipo) {
 		super();
 		this.dorsal = dorsal;
 		this.nombre = nombre;
-		this.nomeq = nomeq;
 		this.nacimiento = nacimiento;
 		this.nomrep = nomrep;
+		this.equipo = equipo;
+	}
+	
+	public Equipo getEquipo() {
+		return equipo;
+	}
+	public void setEquipo(Equipo equipo) {
+		this.equipo = equipo;
 	}
 	public Integer getDorsal() {
 		return dorsal;
@@ -27,12 +45,6 @@ public class Ciclista {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	public String getNomeq() {
-		return nomeq;
-	}
-	public void setNomeq(String nomeq) {
-		this.nomeq = nomeq;
 	}
 	public String getNacimiento() {
 		return nacimiento;
@@ -71,7 +83,7 @@ public class Ciclista {
 	}
 	@Override
 	public String toString() {
-		return "Ciclista [dorsal=" + dorsal + ", nombre=" + nombre + ", nomeq=" + nomeq + ", nacimiento=" + nacimiento
+		return "Ciclista [dorsal=" + dorsal + ", nombre=" + nombre + ", nomeq=" + equipo.getNombre() + ", nacimiento=" + nacimiento
 				+ ", nomrep=" + nomrep + "]";
 	}
 	

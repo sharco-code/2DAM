@@ -1,13 +1,20 @@
 package pojos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.*;
 
+@Entity
 public class Equipo implements Serializable {
-
+	@Id
+	@Column
 	private String nomeq;
-
+	@Column
 	private String director;
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY,mappedBy = "equipo")
+	private List<Ciclista> ciclistas = new ArrayList<Ciclista>();
 	
 	public Equipo() {}
 	public Equipo(String nombre, String director) {
@@ -16,6 +23,19 @@ public class Equipo implements Serializable {
 	}
 	public String getNombre() {
 		return nomeq;
+	}
+	
+	public String getNomeq() {
+		return nomeq;
+	}
+	public void setNomeq(String nomeq) {
+		this.nomeq = nomeq;
+	}
+	public List<Ciclista> getCiclistas() {
+		return ciclistas;
+	}
+	public void setCiclistas(List<Ciclista> ciclistas) {
+		this.ciclistas = ciclistas;
 	}
 	public void setNombre(String nombre) {
 		this.nomeq = nombre;
