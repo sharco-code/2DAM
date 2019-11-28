@@ -1,6 +1,9 @@
+
+
 <p align="Center">
-  <input [class.rojo]="true" [id]="id1" bind-disabled="isDisabled" type="{{type}}"/>
+  <input [(ngModel)]="poli.name" [class.rojo]="true" [id]="id1" bind-disabled="isDisabled" type="{{type}}"/>
 </p>
+<p>{{poli.name}}</p>
 
 <p [ngClass]="mycolors">
     [ngClass]
@@ -8,4 +11,13 @@
 
 <p [style.color]="myStyle">
     [style.color]
-  </p>
+</p>
+
+<div (click)="click()" [ngClass]="mycolors" [style.padding]="padding">
+  <div [class.boton1]="true">CLICK AQUI</div>
+  
+</div>
+<p [ngClass]="mycolors">NUMERO: {{contador}}</p>
+
+<input #idcoche [class.rojo]="true" value="" name="firstname" (change)="CambiaCoche(idcoche)"/>
+<p [ngClass]="mycolors">{{coche}}</p>
