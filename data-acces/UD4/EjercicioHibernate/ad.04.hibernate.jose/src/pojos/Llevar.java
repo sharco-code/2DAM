@@ -1,8 +1,17 @@
 package pojos;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Llevar {
+	@Id
+	@Column
 	private Integer dorsal;
+	@Column
 	private Integer netapa;
+	@Column
 	private String codigo;
 	public Llevar() {
 	}

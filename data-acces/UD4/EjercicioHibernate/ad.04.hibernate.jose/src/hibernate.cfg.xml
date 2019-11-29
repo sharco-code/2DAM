@@ -18,9 +18,11 @@
 		<!-- Disable the second-level cache -->
 		<property name="coche.provider_class">org.hibernate.cache.NoCacheProvider</property>
 		<!-- Echo all executed SQL to stdout -->
-		<property name="show_sql">true</property>
+		<property name="show_sql">false</property>
 		
 		<mapping class="pojos.Ciclista"/>
 		<mapping class="pojos.Equipo"/>
+		<mapping class="pojos.Etapa"/>
+		<mapping class="pojos.Puerto"/>
 	</session-factory>
 </hibernate-configuration> 

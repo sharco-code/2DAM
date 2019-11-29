@@ -1,9 +1,19 @@
 package pojos;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Maillot {
+	@Id
+	@Column
 	private String codigo;
+	@Column
 	private String tipo;
+	@Column
 	private String color;
+	@Column
 	private Integer premio;
 	
 	public Maillot() {

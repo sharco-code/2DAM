@@ -1,6 +1,9 @@
 package pojos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +21,13 @@ public class Ciclista implements Serializable {
 	@Column
 	private String nomrep;
 	
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY,mappedBy = "ciclista")
+	private List<Etapa> etapasGanadas = new ArrayList<>();
+	
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy = "ganador")
+	private List<Puerto> puertosGanados = new ArrayList<>();
+	
+	
 	public Ciclista() {}
 	public Ciclista(Integer dorsal, String nombre, String nacimiento, String nomrep, Equipo equipo) {
 		super();
@@ -28,6 +38,12 @@ public class Ciclista implements Serializable {
 		this.equipo = equipo;
 	}
 	
+	public List<Etapa> getEtapasGanadas() {
+		return etapasGanadas;
+	}
+	public void setEtapasGanadas(List<Etapa> etapas) {
+		this.etapasGanadas = etapas;
+	}
 	public Equipo getEquipo() {
 		return equipo;
 	}
@@ -83,9 +99,14 @@ public class Ciclista implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Ciclista [dorsal=" + dorsal + ", nombre=" + nombre + ", nomeq=" + equipo.getNombre() + ", nacimiento=" + nacimiento
-				+ ", nomrep=" + nomrep + "]";
+		return "Ciclista [dorsal=" + dorsal + ", nombre=" + nombre + ", equipo=" + equipo + ", nacimiento=" + nacimiento
+				+ ", nomrep=" + nomrep + ", etapas=" + etapasGanadas + "]";
 	}
-	
+	public List<Puerto> getPuertosGanados() {
+		return puertosGanados;
+	}
+	public void setPuertosGanados(List<Puerto> puertosGanados) {
+		this.puertosGanados = puertosGanados;
+	}
 	
 }

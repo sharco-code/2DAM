@@ -1,8 +1,16 @@
 package pojos;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Etapa {
@@ -10,23 +18,28 @@ public class Etapa {
 	@Column
 	private Integer netapa;
 	@Column
-	private Integer kn;
+	private Integer km;
 	@Column
 	private String salida;
 	@Column
 	private String llegada;
-	@Column
-	private Integer dorsal;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn (name="dorsal")
+	private Ciclista ciclista;
+	
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY,mappedBy = "etapa")
+	private List<Puerto> puertos = new ArrayList<Puerto>();
 	
 	public Etapa() {
 	}
-	public Etapa(Integer netapa, Integer kn, String salida, String llegada, Integer dorsal) {
+	public Etapa(Integer netapa, Integer km, String salida, String llegada, Ciclista ciclista) {
 		super();
 		this.netapa = netapa;
-		this.kn = kn;
+		this.km = km;
 		this.salida = salida;
 		this.llegada = llegada;
-		this.dorsal = dorsal;
+		this.ciclista = ciclista;
 	}
 	public Integer getNetapa() {
 		return netapa;
@@ -34,11 +47,11 @@ public class Etapa {
 	public void setNetapa(Integer netapa) {
 		this.netapa = netapa;
 	}
-	public Integer getKn() {
-		return kn;
+	public Integer getkm() {
+		return km;
 	}
 	public void setKn(Integer kn) {
-		this.kn = kn;
+		this.km = km;
 	}
 	public String getSalida() {
 		return salida;
@@ -52,16 +65,24 @@ public class Etapa {
 	public void setLlegada(String llegada) {
 		this.llegada = llegada;
 	}
-	public Integer getDorsal() {
-		return dorsal;
-	}
-	public void setDorsal(Integer dorsal) {
-		this.dorsal = dorsal;
-	}
+
+	
 	@Override
 	public String toString() {
-		return "Etapa [netapa=" + netapa + ", kn=" + kn + ", salida=" + salida + ", llegada=" + llegada + ", dorsal="
-				+ dorsal + "]";
+		return "Etapa [netapa=" + netapa + ", kn=" + km + ", salida=" + salida + ", llegada=" + llegada + ", ciclista="
+				+ ciclista + ", puertos=" + puertos + "]";
+	}
+	public Ciclista getCiclista() {
+		return ciclista;
+	}
+	public void setCiclista(Ciclista ciclista) {
+		this.ciclista = ciclista;
+	}
+	public List<Puerto> getPuertos() {
+		return puertos;
+	}
+	public void setPuertos(List<Puerto> puertos) {
+		this.puertos = puertos;
 	}
 	@Override
 	public int hashCode() {

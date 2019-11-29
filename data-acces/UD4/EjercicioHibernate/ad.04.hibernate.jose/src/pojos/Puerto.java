@@ -1,22 +1,42 @@
 package pojos;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Puerto {
+	@Id
+	@Column
 	private String nompuerto;
+	@Column
 	private Integer altura;
+	@Column
 	private String categoria;
+	@Column
 	private Double pendiente;
-	private Integer netapa;
-	private Integer dorsal;
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn (name="netapa")
+	private Etapa etapa;
+	
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn (name="dorsal")
+	private Ciclista ganador;
+	
 	public Puerto() {
 	}
-	public Puerto(String nompuerto, Integer altura, String categoria, Double pendiente, Integer netapa,
-			Integer dorsal) {
+	public Puerto(String nompuerto, Integer altura, String categoria, Double pendiente, Etapa etapa,
+			Ciclista ganador) {
 		this.nompuerto = nompuerto;
 		this.altura = altura;
 		this.categoria = categoria;
 		this.pendiente = pendiente;
-		this.netapa = netapa;
-		this.dorsal = dorsal;
+		this.etapa = etapa;
+		this.ganador = ganador;
 	}
 	public String getNompuerto() {
 		return nompuerto;
@@ -42,17 +62,19 @@ public class Puerto {
 	public void setPendiente(Double pendiente) {
 		this.pendiente = pendiente;
 	}
-	public Integer getNetapa() {
-		return netapa;
+
+	public Etapa getEtapa() {
+		return etapa;
 	}
-	public void setNetapa(Integer netapa) {
-		this.netapa = netapa;
+	public void setEtapa(Etapa etapa) {
+		this.etapa = etapa;
 	}
-	public Integer getDorsal() {
-		return dorsal;
+	
+	public Ciclista getGanador() {
+		return ganador;
 	}
-	public void setDorsal(Integer dorsal) {
-		this.dorsal = dorsal;
+	public void setGanador(Ciclista ganador) {
+		this.ganador = ganador;
 	}
 	@Override
 	public int hashCode() {
@@ -80,7 +102,9 @@ public class Puerto {
 	@Override
 	public String toString() {
 		return "Puerto [nompuerto=" + nompuerto + ", altura=" + altura + ", categoria=" + categoria + ", pendiente="
-				+ pendiente + ", netapa=" + netapa + ", dorsal=" + dorsal + "]";
+				+ pendiente + ", etapa=" + etapa + ", ganador=" + ganador + "]";
 	}
+	
+	
 	
 }

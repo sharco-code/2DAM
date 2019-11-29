@@ -71,7 +71,8 @@ public class Equipo implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Equipo [nomeq=" + nomeq + ", director=" + director + "]";
+		return "Equipo [nomeq=" + nomeq + ", director=" + director + ", ciclistas=" + ciclistas + "]";
 	}
+	
 	
 }
