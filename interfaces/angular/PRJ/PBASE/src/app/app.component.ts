@@ -6,18 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  coche = '';
-
-
   private stat = true;
-
-  public id1 = "InputID1"
-  public isDisabled = false;
-  public type = "text";
-
-  public myStyle = "red";
-
-  public padding = "4%";
 
   public mycolors = {
     BGcolor1:this.stat,
@@ -25,33 +14,11 @@ export class AppComponent  {
     TXTproperty1:this.stat
   };
 
-  public contador = 2;
-  public texto = "";
-
-  public click(){
-    this.contador = this.contador * this.contador;
-  }
-  public initalD() {
-    this.contador = 20;
-    console.log("Se ha cargado el valor"+ this.contador);
+  change(value) {
+    console.log(value)
   }
 
-  public onClick(value) {
-    this.contador++;
-    this.texto = "hola";
-  }
-
-  //-----------------
-
-  poli = {
-    name:"Scooby doo papa",
-    date:"16/16/1923"
-  }
-
-  CambiaCoche(event) {
-    this.coche = event.value;
-    console.log("CambiaCoche(event)");
-  }
+  public selectedValue:string= "";
 
   movies: Movie[] = [  
     {title:'Zootopia',director:'Byron Howard, Rich Moore',cast:'Idris Elba, Ginnifer Goodwin, Jason Bateman',releaseDate:'March 4, 2016',ciudad:'Madrid'},  
@@ -59,10 +26,6 @@ export class AppComponent  {
     {title:'Captain America: Civil War',director:'Anthony Russo, Joe Russo',cast:'Scarlett Johansson, Elizabeth Olsen, Chris Evans',releaseDate:'May 6, 2016',ciudad:'Barcelona'},  
     {title:'X-Men: Apocalypse',director:'Bryan Singer',cast:'Jennifer Lawrence, Olivia Munn, Oscar Isaac',releaseDate:'May 27, 2016',ciudad:'Valencia'}  
   ]  
-  
-  valida() {
-    this.movies[0]
-  }
 
 }
 

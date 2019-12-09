@@ -1,23 +1,32 @@
-
-
-<p align="Center">
-  <input [(ngModel)]="poli.name" [class.rojo]="true" [id]="id1" bind-disabled="isDisabled" type="{{type}}"/>
+<p>Selecciona: 
+  <select #idSelect [ngClass]="mycolors" [(ngModel)]="selectedValue" (change) = "change(idSelect)">
+    <option *ngFor="let item of movies;" [value]="item.title">{{item.title}}</option>
+  </select>
 </p>
-<p>{{poli.name}}</p>
-
 <p [ngClass]="mycolors">
-    [ngClass]
+  {{selectedValue}}
 </p>
 
-<p [style.color]="myStyle">
-    [style.color]
-</p>
 
-<div (click)="click()" [ngClass]="mycolors" [style.padding]="padding">
-  <div [class.boton1]="true">CLICK AQUI</div>
+<table style="width:100%" [ngClass]="mycolors">
+  <tr>
+    <th>Titulo</th>
+    <th>Director</th>
+    <th>Cast</th>
+    <th>Fecha</th>
+    <th>Ciudad</th>
+  </tr>
+
+  <tr *ngFor="let item of movies;" >
+    <td appHighlight>{{item.title}}</td>
+    <td appHighlight>{{item.director}}</td>
+    <td appHighlight>{{item.cast}}</td>
+    <td appHighlight>{{item.releaseDate}}</td>
+    <td appHighlight>
+      <select #idSelect [ngClass]="mycolors" [(ngModel)]="selectedValue" (change) = "change(idSelect)">
+        <option *ngFor="let item of movies;" [value]="item.ciudad">{{item.ciudad}}</option>
+      </select>
+    </td>
+  </tr>
   
-</div>
-<p [ngClass]="mycolors">NUMERO: {{contador}}</p>
-
-<input #idcoche [class.rojo]="true" value="" name="firstname" (change)="CambiaCoche(idcoche)"/>
-<p [ngClass]="mycolors">{{coche}}</p>
+</table>
