@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="convalidaciones.list">
+      <field name="name">convalidaciones list</field>
+      <field name="model">convalidaciones.convalidaciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <record model="ir.ui.view" id="convalidaciones.ciclos_model_tree">
+      <field name="name">Lista Ciclos</field>
+      <field name="model">convalidaciones.ciclos_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="convalidaciones.ciclos_model_form">
+      <field name="name">Formulario Ciclo</field>
+      <field name="model">convalidaciones.ciclos_model</field>
+      <field name="arch" type="xml">
+        <form>
+        <sheet>
+          <group name="padre">
+            <group>
+            <field name="name"/>
+            </group>
+            <group>
+              <field name="descripcion"/>
+            </group>
+          </group>
+          <group string="Modulos de este ciclo">
+            <field name="modulo_id" string="Modulos"/>
+          </group>
+          <group string="Alumnos en este ciclo">
+            <field name="alumno_id" string="Alumno"/>
+          </group>
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="convalidaciones.action_server">
+      <field name="name">convalidaciones server</field>
+      <field name="model_id" ref="model_convalidaciones_convalidaciones"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="convalidaciones.action_window_ciclos">
+      <field name="name">Listado Ciclos</field>
+      <field name="res_model">convalidaciones.ciclos_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+  </data>
+</odoo>

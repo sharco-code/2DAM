@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+    
+    <!-- Top menu item -->
+    
+    <menuitem name="Convalidaciones" id="convalidaciones.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Alumnos" id="convalidaciones.alumnos" parent="convalidaciones.menu_root"/>
+    <menuitem name="Modulos" id="convalidaciones.modulos" parent="convalidaciones.menu_root"/>
+    <menuitem name="Convalidaciones" id="convalidaciones.convalidaciones" parent="convalidaciones.menu_root"/>
+    <menuitem name="Ciclos" id="convalidaciones.ciclos" parent="convalidaciones.menu_root"/>
+    
+    <!-- actions -->
+    
+    <menuitem name="Listado de Alumnos" id="convalidaciones.listado_alumnos" parent="convalidaciones.alumnos"
+              action="convalidaciones.action_window_alumnos"/>
+    <menuitem name="Listado de Modulos" id="convalidaciones.listado_modulos" parent="convalidaciones.modulos"
+              action="convalidaciones.action_window_modulos"/>
+    <menuitem name="Listado de Convalidaciones" id="convalidaciones.listado_convalidaciones" parent="convalidaciones.convalidaciones"
+              action="convalidaciones.action_window_convalidaciones"/>
+    <menuitem name="Listado de Ciclos" id="convalidaciones.listado_ciclos" parent="convalidaciones.ciclos"
+              action="convalidaciones.action_window_ciclos"/>     
+
+
+  </data>
+</odoo>

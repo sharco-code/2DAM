@@ -1,0 +1,93 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="convalidaciones.list">
+      <field name="name">convalidaciones list</field>
+      <field name="model">convalidaciones.convalidaciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <record model="ir.ui.view" id="convalidaciones.alumnos_model_tree">
+      <field name="name">Lista Alumnos</field>
+      <field name="model">convalidaciones.alumnos_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="localidad"/>
+          <field name="provincia"/>
+          <field name="email"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="convalidaciones.alumnos_model_form">
+      <field name="name">Formulario Alumno</field>
+      <field name="model">convalidaciones.alumnos_model</field>
+      <field name="arch" type="xml">
+        <form>
+        <header>
+          <button name="generatePassword" type="object" string="Generar Contraseña" class="oe_edit_only"/>
+        </header>
+        <sheet>
+          <group name="padre">
+            <group string="Datos Personales">
+            
+            <field name="foto" widget="image"/>
+            <field name="name"/>
+            <field name="password"/>
+            <field name="edad"/>
+            
+            </group>
+            <group string="Otros datos">
+              <field name="localidad"/>
+              <field name="provincia"/>
+              <field name="email"/>
+              <group string="Curso">
+                <field name="ciclo_id"/>
+            </group>
+            </group>
+          </group>
+          <group string="Convalidaciones">
+            <field name="convalidaciones"/>
+          </group>
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="convalidaciones.action_server">
+      <field name="name">convalidaciones server</field>
+      <field name="model_id" ref="model_convalidaciones_convalidaciones"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="convalidaciones.action_window_alumnos">
+      <field name="name">Listado Alumnos</field>
+      <field name="res_model">convalidaciones.alumnos_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+  </data>
+</odoo>
