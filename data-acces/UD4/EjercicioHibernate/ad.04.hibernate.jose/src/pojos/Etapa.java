@@ -1,5 +1,6 @@
 package pojos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,14 +14,21 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Etapa {
+public class Etapa implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@Column
 	private Integer netapa;
+	
 	@Column
 	private Integer km;
+	
 	@Column
 	private String salida;
+	
 	@Column
 	private String llegada;
 
@@ -31,16 +39,12 @@ public class Etapa {
 	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY,mappedBy = "etapa")
 	private List<Puerto> puertos = new ArrayList<Puerto>();
 	
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY,mappedBy = "etapa")
+	private List<Llevar> llevar = new ArrayList<Llevar>();
+	
 	public Etapa() {
 	}
-	public Etapa(Integer netapa, Integer km, String salida, String llegada, Ciclista ciclista) {
-		super();
-		this.netapa = netapa;
-		this.km = km;
-		this.salida = salida;
-		this.llegada = llegada;
-		this.ciclista = ciclista;
-	}
+	
 	public Integer getNetapa() {
 		return netapa;
 	}
@@ -49,9 +53,6 @@ public class Etapa {
 	}
 	public Integer getkm() {
 		return km;
-	}
-	public void setKn(Integer kn) {
-		this.km = km;
 	}
 	public String getSalida() {
 		return salida;
@@ -67,11 +68,40 @@ public class Etapa {
 	}
 
 	
+	
+	public Etapa(Integer netapa, Integer km, String salida, String llegada, Ciclista ciclista, List<Puerto> puertos,
+			List<Llevar> llevar) {
+		this.netapa = netapa;
+		this.km = km;
+		this.salida = salida;
+		this.llegada = llegada;
+		this.ciclista = ciclista;
+		this.puertos = puertos;
+		this.llevar = llevar;
+	}
+
 	@Override
 	public String toString() {
-		return "Etapa [netapa=" + netapa + ", kn=" + km + ", salida=" + salida + ", llegada=" + llegada + ", ciclista="
-				+ ciclista + ", puertos=" + puertos + "]";
+		return "Etapa [netapa=" + netapa + ", km=" + km + ", salida=" + salida + ", llegada=" + llegada + ", ciclista="
+				+ ciclista + ", puertos=" + puertos + ", llevar=" + llevar + "]";
 	}
+
+	public Integer getKm() {
+		return km;
+	}
+
+	public void setKm(Integer km) {
+		this.km = km;
+	}
+
+	public List<Llevar> getLlevar() {
+		return llevar;
+	}
+
+	public void setLlevar(List<Llevar> llevar) {
+		this.llevar = llevar;
+	}
+
 	public Ciclista getCiclista() {
 		return ciclista;
 	}

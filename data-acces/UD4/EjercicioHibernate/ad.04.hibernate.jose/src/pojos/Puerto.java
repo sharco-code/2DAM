@@ -11,14 +11,17 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Puerto {
 	@Id
-	@Column
 	private String nompuerto;
+	
 	@Column
 	private Integer altura;
+	
 	@Column
 	private String categoria;
+	
 	@Column
 	private Double pendiente;
+	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn (name="netapa")
 	private Etapa etapa;

@@ -1,8 +1,14 @@
 package pojos;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Maillot {
@@ -16,7 +22,18 @@ public class Maillot {
 	@Column
 	private Integer premio;
 	
+	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY,mappedBy = "maillot")
+	private List<Llevar> llevar = new ArrayList<Llevar>();
+
 	public Maillot() {
+	}
+
+	public List<Llevar> getLlevar() {
+		return llevar;
+	}
+
+	public void setLlevar(List<Llevar> llevar) {
+		this.llevar = llevar;
 	}
 
 	public Maillot(String codigo, String tipo, String color, Integer premio) {

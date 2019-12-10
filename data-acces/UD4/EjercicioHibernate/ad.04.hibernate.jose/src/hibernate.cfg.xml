@@ -24,5 +24,7 @@
 		<mapping class="pojos.Equipo"/>
 		<mapping class="pojos.Etapa"/>
 		<mapping class="pojos.Puerto"/>
+		<mapping class="pojos.Llevar"/>
+		<mapping class="pojos.Maillot"/>
 	</session-factory>
 </hibernate-configuration> 

@@ -22,8 +22,8 @@
     <td appHighlight>{{item.director}}</td>
     <td appHighlight>{{item.cast}}</td>
     <td appHighlight>{{item.releaseDate}}</td>
-    <td appHighlight>
-      <select #idSelect [ngClass]="mycolors" [(ngModel)]="selectedValue" (change) = "change(idSelect)">
+    <td >
+      <select  [ngClass]="mycolors">
         <option *ngFor="let item of movies;" [value]="item.ciudad">{{item.ciudad}}</option>
       </select>
     </td>

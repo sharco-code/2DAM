@@ -8,11 +8,17 @@ import javax.persistence.*;
 
 @Entity
 public class Equipo implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@Column
 	private String nomeq;
+	
 	@Column
 	private String director;
+	
 	@OneToMany (cascade=CascadeType.ALL, fetch=FetchType.LAZY,mappedBy = "equipo")
 	private List<Ciclista> ciclistas = new ArrayList<Ciclista>();
 	
