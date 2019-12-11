@@ -1,32 +1,12 @@
-<p>Selecciona: 
-  <select #idSelect [ngClass]="mycolors" [(ngModel)]="selectedValue" (change) = "change(idSelect)">
-    <option *ngFor="let item of movies;" [value]="item.title">{{item.title}}</option>
-  </select>
-</p>
-<p [ngClass]="mycolors">
-  {{selectedValue}}
-</p>
 
+<!--
+<div style="padding: 1%; background-color: rgb(255, 228, 228); color: red; font-size: x-large; border: 4px solid red;">
+    <eje-input></eje-input>
+</div>  
+ -->
 
-<table style="width:100%" [ngClass]="mycolors">
-  <tr>
-    <th>Titulo</th>
-    <th>Director</th>
-    <th>Cast</th>
-    <th>Fecha</th>
-    <th>Ciudad</th>
-  </tr>
+<p> {{name | lowercase}}</p>
+<p> {{name | uppercase}}</p>
+<p> {{name | slice:2}}</p>
 
-  <tr *ngFor="let item of movies;" >
-    <td appHighlight>{{item.title}}</td>
-    <td appHighlight>{{item.director}}</td>
-    <td appHighlight>{{item.cast}}</td>
-    <td appHighlight>{{item.releaseDate}}</td>
-    <td >
-      <select  [ngClass]="mycolors">
-        <option *ngFor="let item of movies;" [value]="item.ciudad">{{item.ciudad}}</option>
-      </select>
-    </td>
-  </tr>
-  
-</table>
+<p>{{a|number:'3.1-2'}}</p>
