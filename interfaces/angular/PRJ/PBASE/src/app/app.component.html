@@ -10,3 +10,7 @@
 <p> {{name | slice:2}}</p>
 
 <p>{{a|number:'3.1-2'}}</p>
+
+<p>B: {{b | currency:{{b |MyCurrency}}}}</p>
+
+<p>ng generate pipe shared/MyCurrency --skip-tests</p>
