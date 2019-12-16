@@ -7,6 +7,7 @@ import { HighlightDirective } from './directivas/highlight.directive';
 import { EjeInputComponent } from './vista/eje-input/eje-input.component';
 import { PuebloComponent } from './vista/eje-input/pueblo/pueblo.component';
 import { MyCurrencyPipe } from './shared/my-currency.pipe';
+import { UsuariosService } from './data/usuarios.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
