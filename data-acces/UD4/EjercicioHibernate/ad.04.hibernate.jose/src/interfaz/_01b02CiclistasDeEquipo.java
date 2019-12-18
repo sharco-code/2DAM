@@ -15,7 +15,6 @@ public class _01b02CiclistasDeEquipo {
 	
 	public static void main(String[] args) {
 
-		
 		SessionFactory factory = UtilesHibernate.getSessionfactory();
 		Session session = factory.getCurrentSession();
 		session.beginTransaction();

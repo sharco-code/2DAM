@@ -53,24 +53,6 @@ public class _03d04PortadoresMaillotEtapas {
 				System.out.println("  ---------------------------------\n");
 			}));
 		
-		/*
-		HashSet<Maillot> m = new HashSet<Maillot>();
-		
-		etapa.getLlevar().forEach(e -> m.add(e.getMaillot()));
-
-		System.out.println("- Ciclista: "+etapa.getCiclista().getNombre());
-		System.out.println("  Mallots de esa etapa:");
-		System.out.println("  ---------------------");
-		m.forEach(e -> {
-			
-			System.out.println("   - Tipo: "+e.getTipo());
-			System.out.println("   - Color:   "+e.getColor());
-			
-			System.out.println("   ------------------------------");
-			
-		});
-		*/
-		
 	}
 	
 	public static void main(String[] args) {
