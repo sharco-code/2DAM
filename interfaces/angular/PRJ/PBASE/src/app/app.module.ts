@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './comp/home/home.component';
 @NgModule({
+  
   imports:      [ BrowserModule, RouterModule.forRoot([
     {path:"home", component:HomeComponent},
     {path:"About", component:AboutComponent}
