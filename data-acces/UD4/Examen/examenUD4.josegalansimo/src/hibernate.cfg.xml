@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD 5.4//EN" 
+"http://www.hibernate.org/dtd/hibernate-configuration-5.4.dtd">
+<hibernate-configuration>
+	<session-factory> <!-- Database connection settings -->
+		<property name="connection.driver_cLass">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/musicaconclavesajenas</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		<!-- Disable the second-level cache -->
+		<property name="coche.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+		
+		<mapping class="pojos.josegalansimo.Artista"/>
+		<mapping class="pojos.josegalansimo.Pertenece"/>
+		<mapping class="pojos.josegalansimo.Cancion"/>
+		<mapping class="pojos.josegalansimo.Companyia"/>
+		<mapping class="pojos.josegalansimo.Disco"/>
+		<mapping class="pojos.josegalansimo.Grupo"/>
+	</session-factory>
+</hibernate-configuration> 

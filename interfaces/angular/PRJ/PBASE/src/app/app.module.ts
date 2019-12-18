@@ -1,19 +1,17 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HighlightDirective } from './directivas/highlight.directive';
-import { EjeInputComponent } from './vista/eje-input/eje-input.component';
-import { PuebloComponent } from './vista/eje-input/pueblo/pueblo.component';
-import { MyCurrencyPipe } from './shared/my-currency.pipe';
-import { UsuariosService } from './data/usuarios.service';
-
+import { HomeComponent } from './comp/home/home.component';
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HighlightDirective, EjeInputComponent, PuebloComponent, MyCurrencyPipe ],
+  imports:      [ BrowserModule, RouterModule.forRoot([
+    {path:"home", component:HomeComponent},
+    {path:"About", component:AboutComponent}
+   ])],
+  declarations: [ AppComponent, HomeComponent, AboutComponent ],
   
-  providers: [{provide:LOCALE_ID, useValue:'es'}],
+  providers: [],
   bootstrap:    [ AppComponent ]
   
 })
