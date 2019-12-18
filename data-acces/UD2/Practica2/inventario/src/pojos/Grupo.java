@@ -3,6 +3,7 @@ package pojos;
 public class Grupo {
 	
 	private String idgrupo;
+	
 	private String nombre;
 	
 	public Grupo() {
