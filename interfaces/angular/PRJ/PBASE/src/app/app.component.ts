@@ -10,6 +10,10 @@ import localeES from '@angular/common/locales/es';
 
 export class AppComponent  {
 
-
+  public depts =[
+    {id:"1",name:"Contabilidad",jefe:"Luis Ponce",horario:"L 10:30h", contacto:" Avisar al tel:666666666"},
+    {id:"2",name:"Nominas",jefe:"Raul Gomez",horario:"L 10:30h", contacto:" Avisar al tel:666666666"},
+    {id:"3",name:"Almacen",jefe:"Pepe Romero",horario:"L 8h-20:30h", contacto:" Avisar al tel:666666666"}
+  ]
 }
 

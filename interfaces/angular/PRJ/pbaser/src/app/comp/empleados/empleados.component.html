@@ -1,0 +1,20 @@
+
+
+<h1>Empleados del departamento {{Departamento.Nombre}}</h1>
+<h2>ID : {{Departamento.id}} </h2><br>
+
+<div *ngFor="let emp of EmpleadoDepto;">
+    <ul>
+        <li>{{emp.name}} {{emp.id}}</li>
+    </ul>
+    
+</div>
+
+
+<!--
+<button (click)="IrEmplNoExiste()">Ir a Ventas</button>
+-->
+
+<a [routerLink]="['/Contacto',Departamento.id]">Contacto</a>
+<button (click)="onClick()">Volver</button>
+<a routerLink="../../../">Volver</a>

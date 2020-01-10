@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Iniciar sesión</h1>
+    <form class="form">
+        <input type="text" #username name="username" placeholder="Usuario"/><br>
+        <input type="password" #password name="password" placeholder="Contraseña"/><br>
+        <button type="submit" (click)="login(username.value, password.value)" id="login-button">Login</button>
+    </form>
+</div>

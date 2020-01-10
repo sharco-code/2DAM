@@ -1,0 +1,6 @@
+<div *ngFor="let dep of departamentos">
+    <a [routerLink]="['./Empleados',dep.id,dep.name]">{{dep.name}}</a>
+</div>
+
+<router-outlet></router-outlet>
+<a routerLink="../">Volver</a>

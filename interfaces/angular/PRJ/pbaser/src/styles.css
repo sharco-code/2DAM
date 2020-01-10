@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+a{
+    display: block;
+    width: 155px;
+    background-color: aquamarine;
+    padding: 25px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    text-decoration: none;
+}
+
+
+
+
