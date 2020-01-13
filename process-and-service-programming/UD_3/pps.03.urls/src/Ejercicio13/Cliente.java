@@ -1,4 +1,4 @@
-package ejercicio11;
+package Ejercicio13;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,14 +18,6 @@ public class Cliente {
 
 	private static Scanner scanner = new Scanner(System.in);
 	
-	private static boolean isNumeric(String s) {
-        try {
-            Integer.parseInt(s);
-            return true;
-        } catch (NumberFormatException excepcion) {
-            return false;
-        }
-    }
 	
 	public static void main(String[] args) throws UnknownHostException, IOException, ClassNotFoundException, InterruptedException {
 		InetAddress host = InetAddress.getLocalHost();
@@ -36,13 +28,13 @@ public class Cliente {
 		String msg = null;
 		do {
 			msg = scanner.nextLine();
-		} while(!isNumeric(msg));
 
-		objetOutputStream.writeObject(msg);
-		
-		objetInputStream = new ObjectInputStream(socket.getInputStream());
-		String message = (String) objetInputStream.readObject();
-		System.out.println("(CLIENTE) Mensaje recibido: " + message);
+			objetOutputStream.writeObject(msg);
+			if(msg.equals("*")) break;
+			objetInputStream = new ObjectInputStream(socket.getInputStream());
+			String message = (String) objetInputStream.readObject();
+			System.out.println("(CLIENTE) Mensaje recibido: " + message);
+		}while(!msg.equals("*"));
 		
 		objetInputStream.close();
 		objetOutputStream.close();

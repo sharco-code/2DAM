@@ -1,9 +1,8 @@
-package ejercicio11;
+package Ejercicio13;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.ClassNotFoundException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
@@ -22,13 +21,18 @@ public class Servidor {
 		Socket socket = serverSocket.accept();
 
 		ObjectInputStream objetInputStream = new ObjectInputStream(socket.getInputStream());
+		ObjectOutputStream objetOutputStream = null;
+		String message = null;
+		do {
+			message = (String) objetInputStream.readObject();
+			if(message.equals("*")) break;
+			System.out.println("(SERVIDOR) Mensaje recibido: " + message);
+			
+			objetOutputStream = new ObjectOutputStream(socket.getOutputStream());
 
-		String message = (String) objetInputStream.readObject();
-		System.out.println("(SERVIDOR) Mensaje recibido: " + message);
+			objetOutputStream.writeObject("Numero de caracteres:" + message.length());
+		}while(!message.equals("*"));
 		
-		ObjectOutputStream objetOutputStream = new ObjectOutputStream(socket.getOutputStream());
-
-		objetOutputStream.writeObject("" + (Integer.parseInt(message)*Integer.parseInt(message)));
 
 		objetInputStream.close();
 		objetOutputStream.close();

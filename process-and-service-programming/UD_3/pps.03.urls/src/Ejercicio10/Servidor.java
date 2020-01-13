@@ -1,9 +1,8 @@
-package ejercicio11;
+package Ejercicio10;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.lang.ClassNotFoundException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
@@ -28,7 +27,7 @@ public class Servidor {
 		
 		ObjectOutputStream objetOutputStream = new ObjectOutputStream(socket.getOutputStream());
 
-		objetOutputStream.writeObject("" + (Integer.parseInt(message)*Integer.parseInt(message)));
+		objetOutputStream.writeObject("" + message.toLowerCase());
 
 		objetInputStream.close();
 		objetOutputStream.close();

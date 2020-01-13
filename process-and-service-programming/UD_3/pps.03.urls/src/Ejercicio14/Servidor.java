@@ -1,4 +1,4 @@
-package ejercicio11;
+package Ejercicio14;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -19,22 +19,25 @@ public class Servidor {
 
 		serverSocket = new ServerSocket(PORT);
 		System.out.println("(SERVIDOR) escuchando por el puerto: "+PORT);
-		Socket socket = serverSocket.accept();
-
-		ObjectInputStream objetInputStream = new ObjectInputStream(socket.getInputStream());
-
-		String message = (String) objetInputStream.readObject();
-		System.out.println("(SERVIDOR) Mensaje recibido: " + message);
 		
-		ObjectOutputStream objetOutputStream = new ObjectOutputStream(socket.getOutputStream());
 
-		objetOutputStream.writeObject("" + (Integer.parseInt(message)*Integer.parseInt(message)));
+			Socket socket = serverSocket.accept();
 
-		objetInputStream.close();
-		objetOutputStream.close();
-		socket.close();
+			ObjectInputStream objetInputStream = new ObjectInputStream(socket.getInputStream());
 
-		serverSocket.close();
+			Persona p = (Persona) objetInputStream.readObject();
+			System.out.println("(SERVIDOR) Mensaje recibido: " + p.toString());
+			
+			ObjectOutputStream objetOutputStream = new ObjectOutputStream(socket.getOutputStream());
+			p.setNombre(p.getNombre().toUpperCase());
+			objetOutputStream.writeObject(p);
+
+			objetInputStream.close();
+			objetOutputStream.close();
+			socket.close();
+
+			serverSocket.close();
+		
 	}
 
 }
