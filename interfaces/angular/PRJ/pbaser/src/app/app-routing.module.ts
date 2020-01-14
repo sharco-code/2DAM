@@ -10,22 +10,24 @@ import { EmpleadosComponent } from './comp/empleados/empleados.component';
 import { ContactoComponent } from './comp/deptos/contacto/contacto.component';
 
 import { LoginComponent } from './cfg/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'Login', pathMatch:'full'},
   {path:"Login",component:LoginComponent},
-  {path:"Home",component:HomeComponent},
-  {path:"Home/About",component:AboutComponent},
+  {path:"Home",component:HomeComponent, canActivate:[AuthGuard]},
+  {path:"Home/About",component:AboutComponent, canActivate:[AuthGuard]},
   {path:"Home/Deptos",
     component:DeptosComponent,
     children:[
       {path:"Home/Deptos/Contacto/:idDepto",component:ContactoComponent},
-      {path:"Home/Deptos/Empleados/:idDepto/:nombreDepto",component:EmpleadosComponent}
-    ]  
+      {path:"Home/Deptos/Empleados/:idDepto/:nombreDepto",component:EmpleadosComponent},
+      {path: "Productos", loadChildren:()=>import('./comp/deptos/productos/productos.module').then(m->m.ProductosModule)},
+    ], canActivate:[AuthGuard]  
   },
   
-  {path:"**",component:PageNotFoundComponent}];
+  {path:"**",component:PageNotFoundComponent, canActivate:[AuthGuard]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
