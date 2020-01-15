@@ -60,16 +60,16 @@ $app->post('/facturacion/articulo/add',function ($request, $response, $args) {
     
     $datos = $request->getParsedBody();
     
-    $sql = "INSERT INTO articulo (`descripcion`, `pvp`,`iva`) VALUES ('".$datos['descripcion']."',".$datos['pvp'].",".$datos['iva'].")";
+    $sql = "INSERT INTO articulo (`descripcion`, `pvp`,`iva`) VALUES ('".$datos['Descripcion']."',".$datos['PVP'].",".$datos['IVA'].")";
     try{
         $db = connectDB();
         $stmt = $db->query($sql);
         
         return json_encode([
             "ID"=>$db->lastInsertId(),
-            "Descripcion"=>$datos['descripcion'],
-            "PVP"=>$datos['pvp'],
-            "IVA"=>$datos['iva']],
+            "Descripcion"=>$datos['Descripcion'],
+            "PVP"=>$datos['PVP'],
+            "IVA"=>$datos['IVA']],
             200);
         
 
@@ -114,16 +114,16 @@ $app->post('/facturacion/articulo/update',function ($request, $response, $args) 
     
     $datos = $request->getParsedBody();
     
-    $sql = "UPDATE articulo SET descripcion = '".$datos['descripcion']."',pvp = ".$datos['pvp'].", iva = ".$datos['iva']." WHERE id = ".$datos['ID'];
+    $sql = "UPDATE articulo SET descripcion = '".$datos['descripcion']."',pvp = ".$datos['PVP'].", iva = ".$datos['IVA']." WHERE id = ".$datos['ID'];
     try{
         $db = connectDB();
         $stmt = $db->query($sql);
 
         return json_encode([
             "ID"=>$datos['ID'],
-            "Descripcion"=>$datos['descripcion'],
-            "PVP"=>$datos['pvp'],
-            "IVA"=>$datos['iva']],
+            "Descripcion"=>$datos['Descripcion'],
+            "PVP"=>$datos['PVP'],
+            "IVA"=>$datos['IVA']],
             200);
     }catch(PDOException $e){
         return managerError($e);
