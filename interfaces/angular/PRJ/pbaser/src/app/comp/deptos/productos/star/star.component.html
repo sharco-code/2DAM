@@ -1,0 +1,13 @@
+<div [style.with.px]="starWith"
+    [title]="rating"
+    (click)="onClick()">
+
+    <button style="width: 75px;">
+        <span *ngif="Una()">+</span>
+        <span *ngif="Dos()">+</span>
+        <span *ngif="Tres()">+</span>
+        <span *ngif="Cuatro()">+</span>
+        <span *ngif="Cinco()">+</span>
+    </button>
+
+</div>

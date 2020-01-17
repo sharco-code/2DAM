@@ -21,9 +21,9 @@ const routes: Routes = [
   {path:"Home/Deptos",
     component:DeptosComponent,
     children:[
-      {path:"Home/Deptos/Contacto/:idDepto",component:ContactoComponent},
-      {path:"Home/Deptos/Empleados/:idDepto/:nombreDepto",component:EmpleadosComponent},
-      {path: "Productos", loadChildren:()=>import('./comp/deptos/productos/productos.module').then(m->m.ProductosModule)},
+      {path:"Contacto/:idDepto",component:ContactoComponent},
+      {path:"Empleados/:idDepto/:nombreDepto",component:EmpleadosComponent},
+      {path: "Productos", loadChildren:()=>import('./comp/deptos/productos/productos.module').then(m=>m.ProductosModule)},
     ], canActivate:[AuthGuard]  
   },
   
