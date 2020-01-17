@@ -1,1 +1,41 @@
-<p>lista-productos works!</p>
+<div>
+    <div >{{Title}}</div>
+    <div><tr>
+            Filtrar por:<div ><input type='text' [(ngModel)]='listFilter' /></div>
+        </tr>
+        <tr *ngIf='listFilter'><h4>Filtered by: {{listFilter}}</h4></tr>
+        <table *ngIf='productos && productos.length'>
+            <thead><th><button (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</button></th>
+                   <th>Producto</th>
+                   <th>Codigo</th>
+                   <th>Disponible</th>
+                   <th>Precio</th>
+                   <th>Calificación</th>         
+            </thead>
+            <tbody>
+              <tr *ngFor='let producto of ProductosFiltrados'>
+                <td><img *ngIf='showImage'
+                      [title]='producto.productName'
+                      [style.width.px]='imageWidth'
+                      [style.margin.px]='imageMargin'
+                      [src]='producto.imageUrl' />
+                </td>
+                <td><a (click)="onEdit(producto.productId)">{{ producto.productName }}</a></td>
+                <td>{{ producto.productCode | lowercase }}</td>
+                <td>{{ producto.releaseDate }}</td>
+                <td>{{ producto.price | currency:'EUR':'symbol':'1.2-2'}}</td>
+                <td>
+                  <app-star [rating]='producto.starRating'
+                          (ratingClicked)='onRatingClicked($event)'>
+                  </app-star>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+  </div>
+  <div *ngIf='errorMessage'>
+    Error: {{ errorMessage }}
+  </div>
+
+<button BackButton>Volver</button>
