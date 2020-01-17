@@ -1,4 +1,4 @@
-package ad.ud3.xml.jose;
+package sax;
 
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;

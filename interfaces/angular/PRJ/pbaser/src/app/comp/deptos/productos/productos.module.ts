@@ -5,10 +5,11 @@ import { ProductosRoutingModule, CompDeProductos } from './productos-routing.mod
 import { HomeComponent } from '../../home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { StarComponent } from './star/star.component';
+import { EditProductoComponent } from './edit-producto/edit-producto.component';
 
 
 @NgModule({
-  declarations: [CompDeProductos, StarComponent],
+  declarations: [CompDeProductos, StarComponent, EditProductoComponent],
   imports: [
     CommonModule,
     ProductosRoutingModule,

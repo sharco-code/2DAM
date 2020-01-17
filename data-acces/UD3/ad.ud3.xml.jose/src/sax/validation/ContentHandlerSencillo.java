@@ -1,4 +1,4 @@
-package validacion;
+package sax.validation;
 
 import java.io.IOException;
 
