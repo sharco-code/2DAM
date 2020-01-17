@@ -12,4 +12,4 @@ class ciclos_model(models.Model):
 
     alumno_id = fields.One2many('convalidaciones.alumnos_model', 'ciclo_id')
 
-    modulo_id = fields.One2many('convalidaciones.modulos_model', 'ciclo_id')
+    modulo_id = fields.Many2many('convalidaciones.modulos_model')

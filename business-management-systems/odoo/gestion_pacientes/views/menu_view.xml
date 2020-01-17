@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+    
+    <!-- Top menu item -->
+    
+    <menuitem name="Gestión de Pacientes" id="gestion_pacientes.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Clínica" id="gestion_pacientes.clinica" parent="gestion_pacientes.menu_root"/>
+
+    <!-- actions -->
+    
+    <menuitem name="Pacientes" id="gestion_pacientes.listado_patient" parent="gestion_pacientes.clinica"
+              action="gestion_pacientes.action_window_patient"/>
+    <menuitem name="Historial" id="gestion_pacientes.listado_history" parent="gestion_pacientes.clinica"
+              action="gestion_pacientes.action_window_history"/>
+ 
+
+
+  </data>
+</odoo>

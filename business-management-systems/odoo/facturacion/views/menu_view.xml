@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    
+    <!-- Top menu item -->
+    
+    <menuitem name="Facturacion" id="facturacion.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Operaciones" id="facturacion.operaciones" parent="facturacion.menu_root"/>
+    
+    <!-- actions -->
+    
+    <menuitem name="Clientes" id="facturacion.listado_clientes" parent="facturacion.operaciones"
+              action="facturacion.action_window_clientes"/>
+    <menuitem name="Productos" id="facturacion.listado_productos" parent="facturacion.operaciones"
+              action="facturacion.action_window_productos"/>
+    <menuitem name="Facturas" id="facturacion.listado_facturas" parent="facturacion.operaciones"
+              action="facturacion.action_window_facturas"/>
+
+
+  </data>
+</odoo>

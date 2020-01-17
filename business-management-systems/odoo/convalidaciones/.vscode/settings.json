@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "actividad1",
+            "dialect": "PostgreSQL",
+            "name": "Odoo BBDD",
+            "password": "admin",
+            "port": 5432,
+            "server": "localhost",
+            "username": "admin"
+        }
+    ]
+}

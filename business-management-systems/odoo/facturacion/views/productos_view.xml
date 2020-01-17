@@ -1,0 +1,77 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="facturacion.list">
+      <field name="name">facturacion list</field>
+      <field name="model">facturacion.facturacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <record model="ir.ui.view" id="facturacion.productos_model_tree">
+      <field name="name">Lista Productos</field>
+      <field name="model">facturacion.productos_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="facturacion.productos_model_form">
+      <field name="name">Formulario Paciente</field>
+      <field name="model">facturacion.productos_model</field>
+      <field name="arch" type="xml">
+        <form>
+        <header>
+          <button name="addStock" type="Object" string="Añadir Stock"/>
+        </header>
+        <sheet>
+          <group name="padre">
+            
+            <field name="name"/>
+            <field name="description"/>
+            <field name="pvp"/>
+            <field name="stock"/>
+            
+          </group>
+          
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="facturacion.action_server">
+      <field name="name">facturacion server</field>
+      <field name="model_id" ref="model_facturacion_facturacion"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="facturacion.action_window_productos">
+      <field name="name">Listado Clientela</field>
+      <field name="res_model">facturacion.productos_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+  </data>
+</odoo>

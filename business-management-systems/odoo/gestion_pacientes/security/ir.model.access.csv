@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestion_pacientes_patient_model,gestion_pacientes.patient_model,model_gestion_pacientes_patient_model,,1,1,1,1
+access_gestion_pacientes_history_model,gestion_pacientes.history_model,model_gestion_pacientes_history_model,,1,1,1,1

@@ -1,0 +1,108 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="gestion_pacientes.list">
+      <field name="name">gestion_pacientes list</field>
+      <field name="model">gestion_pacientes.gestion_pacientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <record model="ir.ui.view" id="gestion_pacientes.patient_model_tree">
+      <field name="name">Lista Pacientes</field>
+      <field name="model">gestion_pacientes.patient_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="name"/>
+          <field name="surnames"/>
+          <field name="telephone"/>
+          <field name="birth"/>
+          <field name="email"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gestion_pacientes.patient_model_form">
+      <field name="name">Formulario Paciente</field>
+      <field name="model">gestion_pacientes.patient_model</field>
+      <field name="arch" type="xml">
+        <form>
+        <header>
+          <button name="deleteHistory" type="object" string="Borrar Historial" class="oe_edit_only"/>
+        </header>
+            <sheet>
+                <group name="padre">
+                    <group string="Datos Personales">
+                        <field name="dni"/>
+                        <field name="name"/>
+                        <field name="surnames"/>
+                        <field name="telephone"/>
+                        <field name="birth"/>
+                        <field name="email"/>
+                        <field name="visitsCount"/>
+                    </group>
+                    <group string="Foto">
+                        <field name="image" widget="image"/>
+                    </group>
+                </group>
+                <group string="Historial de Visitas">
+                    <field name="visits"/>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record>
+
+<!--
+
+<group string="Datos Personales">
+<field name="dni">
+<field name="name"/>
+<field name="surnames"/>
+<field name="telephone"/>
+<field name="birth"/>
+<field name="email"/>
+<field name="visitsCount"/>
+</group>
+<group string="Foto">
+<field name="image" widget="image"/>
+</group>
+</group>
+<group string="Historial de Visitas">
+<field name="visits"/>
+
+-->
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="gestion_pacientes.action_server">
+      <field name="name">gestion_pacientes server</field>
+      <field name="model_id" ref="model_gestion_pacientes_gestion_pacientes"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="gestion_pacientes.action_window_patient">
+      <field name="name">Listado Pacientes</field>
+      <field name="res_model">gestion_pacientes.patient_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+  </data>
+</odoo>

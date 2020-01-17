@@ -11,4 +11,4 @@ class modulos_model(models.Model):
 
     convalidaciones = fields.One2many('convalidaciones.convalidaciones_model', 'modulo_id')
 
-    ciclo_id = fields.Many2one('convalidaciones.ciclos_model')
+    ciclo_id = fields.Many2many('convalidaciones.ciclos_model')
