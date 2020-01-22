@@ -8,10 +8,13 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class LeerXML {
-	
+public class MostrarRecursivoConChildNodes {
+
+
 	private static DocumentBuilderFactory factory = null;
 	private static DocumentBuilder builder = null;
 	
@@ -20,15 +23,12 @@ public class LeerXML {
 			factory = DocumentBuilderFactory.newInstance();
 			builder = factory.newDocumentBuilder();
 			
-			Document doc = builder.parse("ciclos.xml");
-			doc.normalize();
+			Document doc = builder.parse("Ciclos.xml");
 			
 			Element root = doc.getDocumentElement();
-			System.out.println("Elementou raíz: " + root.getNodeName());
+			 
+			showChilds(root, 0);
 			
-			System.out.println("Tipo de documento: "+doc.getDoctype().getName());
-			System.out.println("Encoding: "+doc.getXmlEncoding());
-			System.out.println("Version de xml: "+doc.getXmlVersion());
 		} catch (ParserConfigurationException e) {
 			System.out.println("Problema al crear el DocumentBuilder");
 			e.printStackTrace();
@@ -37,6 +37,36 @@ public class LeerXML {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
 
+	}
+	
+	private static void showChilds(Node n, int ident) {
+		ident(ident);
+		showNode(n);
+		NodeList childs = n.getChildNodes();
+		for (int i = 0; i < childs.getLength(); i++) {
+			showChilds(childs.item(i), ident+1);
+		}
+	}
+	
+	private static void showNode(Node n) {
+		switch (n.getNodeType()) {
+			case Node.TEXT_NODE:
+				System.out.println(n.getNodeValue().trim());
+				break;
+			case Node.COMMENT_NODE:
+				System.out.println("Comentario: "+n.getNodeValue().trim());
+				break;
+
+			default:
+				System.out.println(n.getNodeName());
+		}
+	}
+	
+	private static void ident(int n) {
+		for (int i = 0; i < n; i++) {
+			System.out.print("\t");
+		}
+	}
+	
 }
