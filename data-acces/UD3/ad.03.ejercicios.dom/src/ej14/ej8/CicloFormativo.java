@@ -12,7 +12,6 @@ public class CicloFormativo {
 	
 	private List<Modulo> modulos = new ArrayList<>(); 
 	
-	
 	public List<Modulo> getModulos() {
 		return modulos;
 	}

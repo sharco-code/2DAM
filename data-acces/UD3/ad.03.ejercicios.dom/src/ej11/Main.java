@@ -16,19 +16,18 @@ public class Main {
 
 	private static DocumentBuilderFactory factory = null;
 	private static DocumentBuilder builder = null;
-	
+
 	public static void main(String[] args) {
 		try {
 			factory = DocumentBuilderFactory.newInstance();
 			builder = factory.newDocumentBuilder();
-			
+
 			Document doc = builder.parse("Ciclos.xml");
-			
-			Element root = doc.getDocumentElement();
-			 
+
 			NodeList familias = doc.getElementsByTagName("familia");
-			System.out.println("Numero de familias: "+familias.getLength());
 			
+			System.out.println("Numero de familias: " + familias.getLength());
+
 		} catch (ParserConfigurationException e) {
 			System.out.println("Problema al crear el DocumentBuilder");
 			e.printStackTrace();
@@ -39,5 +38,5 @@ public class Main {
 		}
 
 	}
-	
+
 }

@@ -57,34 +57,18 @@ public class Main {
 			suma[i] = 0;
 			Node nNode = ciclos.item(i);
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-				Element eElement = (Element) nNode;
-				NodeList setList = eElement.getElementsByTagName("titulo");
-				
-
-				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement2 = (Element) nNode;
-					NodeList modulos = eElement2.getElementsByTagName("modulo");
+				NodeList modulos = ((Element) nNode).getElementsByTagName("modulo");
 					for (int j = 0; j < modulos.getLength(); j++) {
 						NamedNodeMap a = modulos.item(j).getAttributes();
 						Node attribute = a.item(0);
 						suma[i] += Integer.parseInt(attribute.getNodeValue());
 					}
 
-				}
+				Node attribute = ciclos.item(i).getParentNode().getChildNodes().item(3).getAttributes().item(0);
 				
-				NamedNodeMap namednodemap = ciclos.item(i).getParentNode().getChildNodes().item(3).getAttributes();
-				Node attribute = namednodemap.item(0);
-				if(attribute.getNodeValue().equals("medio")) {
-					lst.add(new CicloFormativo(setList.item(0).getChildNodes().item(0).getNodeValue(), ciclos.item(i).getParentNode().getChildNodes().item(1).getChildNodes().item(0).getNodeValue(), 1, suma[i]));
-				} else {
-					lst.add(new CicloFormativo(setList.item(0).getChildNodes().item(0).getNodeValue(), ciclos.item(i).getParentNode().getChildNodes().item(1).getChildNodes().item(0).getNodeValue(), 2, suma[i]));
-				}
-				
+				lst.add(new CicloFormativo(((Element) nNode).getElementsByTagName("titulo").item(0).getChildNodes().item(0).getNodeValue(), ciclos.item(i).getParentNode().getChildNodes().item(1).getChildNodes().item(0).getNodeValue(), attribute.getNodeValue().equals("medio") ? 1  : 2, suma[i]));
 			}
-			
-			
 		}
-
 		return lst;
 	}
 
