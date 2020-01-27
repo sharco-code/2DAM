@@ -30,7 +30,7 @@ public class HiloServidor extends Thread {
 		Datos datos = new Datos("Adivina un nº entre 1-25", 0, id);
 
 		while (true) {
-			if (!client.isConnected()) System.out.println("Cliente desconectado");
+			if (!client.isConnected()) System.out.println("(SERVIDOR) Cliente se ha desconectado");
 			try {
 				this.objectOutputStream = new ObjectOutputStream(client.getOutputStream());
 				objectOutputStream.writeObject(datos);
@@ -41,10 +41,8 @@ public class HiloServidor extends Thread {
 				datos.setCadena(compartido.nuevaJugada(datos.getIdentificador(), Integer.parseInt(datos.getCadena())));
 
 				if (compartido.isTerminado()) {
-					if (datos.getIdentificador() == compartido.getIdGanador()) {
-						datos.setGana(true);
+					if (datos.getIdentificador() == compartido.getIdGanador()) datos.setGana(true);
 
-					}
 					datos.setJuega(false);
 				}
 
@@ -52,7 +50,7 @@ public class HiloServidor extends Thread {
 
 				if (datos.getIntentos() >= 5 && !datos.isGana()) {
 					datos.setJuega(false);
-					datos.setCadena("Has alcanzado el limite de intentos");
+					datos.setCadena("Se ha alcanzado el limite de intentos");
 				}
 				
 			} catch (IOException e) {
