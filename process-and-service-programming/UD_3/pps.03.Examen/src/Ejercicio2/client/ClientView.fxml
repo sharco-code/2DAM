@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="396.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ejercicio2.client.ClientViewController">
+   <children>
+      <Label layoutX="36.0" layoutY="31.0" text="ID Cliente:" />
+      <Label layoutX="101.0" layoutY="31.0" text="no conectado" fx:id="xLabelID" />
+      <Label layoutX="36.0" layoutY="71.0" text="Jugadas realizadas:" />
+      <Separator layoutX="26.0" layoutY="56.0" prefHeight="3.0" prefWidth="433.0" />
+      <Label layoutX="145.0" layoutY="71.0" text="0" fx:id="xLabelJugadasRealizadas" />
+      <Button disable="true" layoutX="215.0" layoutY="121.0" mnemonicParsing="false" onAction="#xButtonEnviarCLICK" text="Enviar datos a servidor" fx:id="xButtonEnviar" />
+      <Separator layoutX="26.0" layoutY="100.0" prefHeight="3.0" prefWidth="433.0" />
+      <TextField disable="true" layoutX="45.0" layoutY="121.0" fx:id="xTextField1" />
+      <Button layoutX="340.0" layoutY="27.0" mnemonicParsing="false" onAction="#xButtonConectarCLICK" text="Conectar a servidor" fx:id="xButtonConectar" />
+      <Label layoutX="215.0" layoutY="198.0" text=" " fx:id="xLabelTEXTO" />
+   </children>
+</AnchorPane>
