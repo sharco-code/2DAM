@@ -20,7 +20,6 @@ public class Main {
 			String string = "";
 			do {
 				
-				
 				System.out.print("Introduce una URL:");
 				string = scanner.nextLine();
 				if(string.equals("*")) break;

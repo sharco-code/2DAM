@@ -53,7 +53,6 @@ public class Hilo extends Thread {
 				return;
 			}
 			try {
-				
 				objectInputStream = new ObjectInputStream(client.getInputStream());
 				Integer apuesta = (Integer) objectInputStream.readObject();
 				

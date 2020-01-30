@@ -47,7 +47,6 @@ public class ClientViewController {
 	@FXML
 	public void xButtonEnviarCLICK(ActionEvent event) {
 		
-		
 		if(Integer.parseInt(this.xTextField1.getText())>19 ||Integer.parseInt(this.xTextField1.getText())<1) {
 			JOptionPane.showMessageDialog(null, "(Cliente) Tienes que intruducir un numero entre 1 y 20");
 			return;
@@ -80,18 +79,14 @@ public class ClientViewController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}catch (Exception e) {
             e.printStackTrace();
 		}
-		
-		
 	}
 
 	@FXML
 	public void xButtonConectarCLICK(ActionEvent event) {
-		
 		try {
 			cliente = new Socket("localhost", PORT);
 
@@ -111,8 +106,5 @@ public class ClientViewController {
 		} catch (Exception e) {
             JOptionPane.showMessageDialog(null, "(Cliente) No se ha podido conectar con el servidor");
 		}
-		
-
-		
 	}
 }

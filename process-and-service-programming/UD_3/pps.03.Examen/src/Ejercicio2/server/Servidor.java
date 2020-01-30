@@ -3,7 +3,6 @@ package Ejercicio2.server;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
 public class Servidor {
 
 	private static ServerSocket serverSocket;
@@ -51,7 +50,6 @@ public class Servidor {
 				hilo.start();
 				id++;
 			}
-			 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
