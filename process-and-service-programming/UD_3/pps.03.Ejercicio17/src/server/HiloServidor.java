@@ -65,7 +65,5 @@ public class HiloServidor extends Thread {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }
