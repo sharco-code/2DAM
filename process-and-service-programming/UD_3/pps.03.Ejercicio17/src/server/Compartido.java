@@ -14,20 +14,14 @@ public class Compartido {
 		String cadena = "";
 
 		if (!isFinished) {
-			if (num > this.num)
-				return "El numero es demasiado alto";
-			if (num < this.num)
-				return "El numero es demasiado bajo";
+			if (num > this.num) return "El numero es demasiado alto";
+			if (num < this.num) return "El numero es demasiado bajo";
 			if (num == this.num) {
 				this.isFinished = true;
 				this.idWinner = id;
 				return "Has ganado! el nº era " + this.num;
 			}
-		} else {
-			return "El juego ha terminado, el ganador es el jugador " + this.idWinner + ", el numero era " + this.num;
-		}
-
-		return cadena;
+		} else return "El juego ha terminado, el ganador es el jugador " + this.idWinner + ", el numero era " + this.num;
 	}
 
 	public boolean isTerminado() {
