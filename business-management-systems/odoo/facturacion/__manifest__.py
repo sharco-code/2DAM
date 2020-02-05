@@ -5,7 +5,7 @@
     'summary': "Modulo para gestion de facturas (examen python)",
 
     'description': """
-        Modulo para gestion de facturas (examen python) Jose Galan Simo
+        Modulo para gestion de facturas (examen python)
     """,
 
     'author': "Jose Galán",

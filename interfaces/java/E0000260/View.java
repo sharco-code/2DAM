@@ -70,7 +70,7 @@ public class View extends JFrame {
 		panelBot.add(panelBotWEST);
 		panelBot.add(panelBotEAST);
 
-		frame = new JFrame("Aplicacion de Jose Galan Simo 2DAM");
+		frame = new JFrame("Aplicacion de sharco");
 
 		frame.getContentPane().add(sp, BorderLayout.CENTER);
 		frame.getContentPane().add(panelTop, BorderLayout.NORTH);

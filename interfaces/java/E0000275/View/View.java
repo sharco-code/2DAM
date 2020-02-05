@@ -59,7 +59,7 @@ public class View {
 
 		scrollPaneTabla = new JScrollPane(table);
 
-		frame = new JFrame("Programa JSON Jose Galan");
+		frame = new JFrame("Programa JSON sharco");
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(panelTop, BorderLayout.NORTH);
