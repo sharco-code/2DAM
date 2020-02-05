@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE colegi SYSTEM "colegiExamen.dtd">
+<colegi>
+	<grup codi ="1DAM" maxalumnes="24">
+		<nomgrup>1º DAM</nomgrup>
+		<alumne>
+			<expedient>6601</expedient>
+			<nom>David Gonzalez</nom>
+			<dataingres>01/09/2017</dataingres>
+		</alumne>
+		<alumne>
+			<expedient>6602</expedient>
+			<nom>Pedro Moreno</nom>
+			<dataingres>01/09/2017</dataingres>
+		</alumne>
+		<alumne>
+			<expedient>6603</expedient>
+			<nom>Julian Gomez</nom>
+			<dataingres>01/09/2012</dataingres>
+		</alumne>
+	</grup>
+
+	<grup codi ="2DAM" maxalumnes="24">
+		<nomgrup>2º DAM</nomgrup>
+		<alumne>
+			<expedient>6605</expedient>
+			<nom>Fernando Flores</nom>
+			<dataingres>01/03/2017</dataingres>
+		</alumne>
+		<alumne>
+			<expedient>6606</expedient>
+			<nom>David Mancebo</nom>
+			<dataingres>01/05/2017</dataingres>
+		</alumne>
+		<alumne>
+			<expedient>6607</expedient>
+			<nom>Laura Solsona</nom>
+			<dataingres>01/06/2017</dataingres>
+		</alumne>
+	</grup>
+</colegi>
+	
+		

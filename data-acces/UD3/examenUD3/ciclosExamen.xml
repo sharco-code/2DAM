@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ofertaformativa SYSTEM "ofertaFormExamen.dtd">
+<ofertaformativa>
+	<familia>
+		<nom>Informatica y comunicaciones</nom>
+		<cicle grau="superior">
+			<titol>Desarrollo de aplicaciones multiplataforma</titol>
+			<curs codi="1DAM">
+				<modul hores = "100">Lenguajes de marcas y sistemas de gestión de información.</modul>
+				<modul hores="160">Sistemas informáticos.</modul>
+				<modul hores="160">Bases de Datos.</modul>
+				<modul hores="256">Programación.</modul>
+				<modul hores="96">Entornos de desarrollo.</modul>
+			</curs>
+			<curs codi="2DAM">
+				<modul hores="120">Acceso a datos.</modul>
+				<modul hores="120">Desarrollo de interfaces.</modul>
+				<modul hores="100">Programación multimedia y dispositivos móviles.</modul>
+				<modul hores="60">Programación de servicios y procesos.</modul>
+				<modul hores="100">Sistemas de gestión empresarial.</modul>
+				<modul hores="60">Empresa e iniciativa emprendedora.</modul>
+				<modul hores="40">Proyecto de Desarrollo de aplicaciones multiplataforma.</modul>
+				<modul hores="400">Formación en Centros de Trabajo.</modul>
+			</curs>
+		</cicle>
+	</familia>
+	<familia>
+		<nom>Imagen y sonido</nom>
+		<cicle grau="mig">
+			<titol>Sonido para audiovisuales y espectaculos</titol>
+			<curs codi="1SAE">
+				<modul hores="96">Planificación de proyectos de sonido.</modul>
+				<modul hores="192">Instalaciones de sonido.</modul>
+				<modul hores="224">Sonido para audiovisuales.</modul>
+				<modul hores="128">Electroacústica.</modul>
+				<modul hores="128">Comunicación y expresión sonora.</modul>
+				<modul hores="96">Formación y orientación laboral.</modul>
+				<modul hores="96">Horario reservado para el módulo impartido en inglés.</modul>
+			</curs>
+			<curs codi="2SAE">
+				<modul hores="120">Control de sonido en directo.</modul>
+				<modul hores="160">Grabación en estudio.</modul>
+				<modul hores="80">Ajustes de sistemas de sonorización.</modul>
+				<modul hores="140">Postproducción de sonido.</modul>
+				<modul hores="60">Empresa e iniciativa emprendedora.</modul>
+				<modul hores="40">Proyecto de sonido para audiovisuales y espectáculos.</modul>
+				<modul hores="400">Formación en Centros de Trabajo. </modul>
+			</curs>
+		</cicle>
+	</familia>
+</ofertaformativa>

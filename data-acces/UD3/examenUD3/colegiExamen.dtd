@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT colegi (grup+)>
+<!ELEMENT grup (nomgrup,alumne+)>
+<!ATTLIST grup codi CDATA "">
+<!ATTLIST grup maxalumnes CDATA "">
+<!ELEMENT nomgrup (#PCDATA)>
+<!ELEMENT alumne (expediente, nom, dataingres)>
+<!ELEMENT expedient (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT dataingres (#PCDATA)>

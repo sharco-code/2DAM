@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT ofertaformativa (familia*)>
+<!ELEMENT familia (nom,cicle+)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT cicle (titol,curs+)>
+<!ELEMENT titol (#PCDATA)>
+<!ELEMENT curs (modul+)>
+<!ELEMENT modul (#PCDATA)>
+
+<!ATTLIST cicle grau ( mig | superior ) #REQUIRED>
+<!ATTLIST curs codi CDATA "">
+<!ATTLIST modul hores CDATA "">
+	
