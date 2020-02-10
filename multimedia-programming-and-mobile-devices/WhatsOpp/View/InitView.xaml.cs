@@ -17,9 +17,9 @@ namespace WhatsOpp.View {
 
         private void Accept_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LoginView
+            Navigation.PushAsync(new SinginView
             {
-                BindingContext = new LoginViewModel()
+                BindingContext = new SinginViewModel()
             });
         }
 

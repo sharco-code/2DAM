@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:WhatsOpp.View.MainViewPages"
              mc:Ignorable="d"
-             x:Class="WhatsOpp.View.MainView">
+             x:Class="WhatsOpp.View.MainView"
+            NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">  
   <!--Pages can be added as references or inline-->
     <TabbedPage.Children>
         <local:ChatsPage 

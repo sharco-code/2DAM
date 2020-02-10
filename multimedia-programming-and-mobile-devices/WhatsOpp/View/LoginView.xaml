@@ -5,14 +5,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="WhatsOpp.View.LoginView"
-             BackgroundColor="Aquamarine">
+             BackgroundColor="Aquamarine"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
     <ContentPage.Content>
         <StackLayout BackgroundColor="AliceBlue" Margin="10" VerticalOptions="FillAndExpand">
             <Label Margin="20" Text="WhatsOpp™" FontSize="Header" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Aquamarine" FontAttributes="Bold"/>
+            <!--
             <StackLayout Margin="20">
-                <Label Text="Para utilizar WhatsOpp™ debes crearte una cuenta, para identificarte con tus contactos" HorizontalTextAlignment="Center" />
-            </StackLayout>
+                <Label Text="Para utilizar WhatsOpp™ debes crearte una cuenta" HorizontalTextAlignment="Center" />
 
+                <Grid Margin="25" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Nombre de usuario" Grid.Row="0"  Grid.Column="0"/>
+                    <Entry Grid.Row="0" Grid.Column="1"/>
+
+                    <Label Text="Contraseña" Grid.Row="1"  Grid.Column="0"/>
+                    <Entry Grid.Row="1" Grid.Column="1" IsPassword="True"/>
+                </Grid>
+            </StackLayout>
+            -->
+            
+        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
