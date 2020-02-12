@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="445.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Actividad00.ViewController">
+   <children>
+      <Button layoutX="288.0" layoutY="43.0" mnemonicParsing="false" onAction="#xButtonConnectar" prefHeight="25.0" prefWidth="105.0" text="Conectar" fx:id="xButtonConnectar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Separator layoutX="18.0" layoutY="164.0" prefHeight="3.0" prefWidth="392.0" />
+      <Button layoutX="321.0" layoutY="124.0" mnemonicParsing="false" onAction="#xButtonSalir" text="Salir" fx:id="xButtonSalir" />
+      <Label layoutX="119.0" layoutY="26.0" text="Introduce 0 para apagar el servidor" visible="false" fx:id="xLabelInfo" />
+      <Label layoutX="34.0" layoutY="26.0" text="Serivdor:" />
+      <Label layoutX="35.0" layoutY="84.0" text="Usuario:" />
+      <TextField layoutX="97.0" layoutY="22.0" fx:id="xTextFieldServidor" />
+      <TextField layoutX="113.0" layoutY="80.0" prefHeight="25.0" prefWidth="99.0" fx:id="xTextFieldUsuario" />
+      <PasswordField layoutX="113.0" layoutY="115.0" prefHeight="25.0" prefWidth="99.0" fx:id="xTextFieldPassword" />
+      <Label layoutX="35.0" layoutY="119.0" text="Contraseña:" />
+      <TextArea editable="false" disable="true" layoutX="28.0" layoutY="180.0" prefHeight="200.0" prefWidth="373.0" fx:id="xTextAreaPrincipal" />
+      <Button disable="true" layoutX="31.0" layoutY="397.0" mnemonicParsing="false" onAction="#xButtonSubirArchivo" text="Subir Archivo" fx:id="xButtonSubirArchivo" />
+      <Label layoutX="294.0" layoutY="16.0" text="No conectado" textFill="RED" fx:id="xLabelSTATUS">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button disable="true" layoutX="289.0" layoutY="86.0" mnemonicParsing="false" onAction="#xButtonDesconectar" prefHeight="25.0" prefWidth="105.0" text="Desconectar" fx:id="xButtonDesconectar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
