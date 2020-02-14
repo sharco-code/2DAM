@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Configuración </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <mat-card class="example-card" align-self-center>
+    <form #FProducto="ngForm"  (ngSubmit)="onFormSubmit()">
+      <div text-center>
+        <h3>IP para la conexión con la base de datos</h3>
+      </div>
+    <br>
+
+    <div padding>
+      <ion-item>
+        <ion-input [(ngModel)]="IP" type="text" name="ip" placeholder="IP de la Base de Datos" ngModel required></ion-input>
+      </ion-item>
+    </div>
+
+      <br>
+      
+      <table style="width:100%">
+        <tr>
+          <th>
+            
+            <div padding>
+              <ion-button size="large" type="submit" expand="block">
+                <mat-icon>save</mat-icon>
+                &nbsp; Guardar
+              </ion-button>
+            </div>
+
+          </th> 
+          <th>
+
+            <div padding>
+              <ion-button size="large" type="submit" (click)="Exit()" expand="block">
+                &nbsp;&nbsp;
+                <mat-icon>directions_run</mat-icon>
+                &nbsp; Salir &nbsp;&nbsp;&nbsp;
+              </ion-button>
+            </div>
+
+          </th>
+        </tr>
+      </table>
+
+     
+      
+
+    </form>
+  </mat-card>
+
+</ion-content>

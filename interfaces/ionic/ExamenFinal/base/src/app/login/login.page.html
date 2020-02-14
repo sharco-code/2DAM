@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>    
+        <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Ej 20">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu1="matMenu">
+          <button mat-menu-item (click)="irConfig()">
+            <mat-icon>settings_applications</mat-icon>
+            <span>Configuración</span>
+          </button>
+          <button mat-menu-item (click)="Exit()">
+            <mat-icon>directions_run</mat-icon>
+            <span>Exit</span>
+          </button>
+        </mat-menu>
+        Examen Jose Galan Simo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form #form="ngForm">
+    <ion-grid>
+      <ion-row color="" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Login</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="username" [(ngModel)]="user" type="username" #username placeholder="Nombre de empleado" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" [(ngModel)]="pass" type="password" #password placeholder="Contraseña" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button (click)="login()" size="large" id="login-button" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
