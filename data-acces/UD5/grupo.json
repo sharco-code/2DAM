@@ -1,0 +1,83 @@
+//grupo.json EJEMPLO
+{
+  "cod": 1,
+  "nombre": "nombre",
+  "fecha": "16/05/1990",
+  "pais": "pais",
+  "clubs": [
+    {
+      "cod": 1,
+      "nombre": "nombre",
+      "sede": "sede",
+      "num": 1
+    },
+    {
+      "cod": 1,
+      "nombre": "nombre",
+      "sede": "sede",
+      "num": 1
+    }
+  ],
+  "artistas": [
+    {
+      "dni": "dni",
+      "nombre": "nombre",
+      "funcion": "funcion"
+    },
+    {
+      "dni": "dni",
+      "nombre": "nombre",
+      "funcion": "funcion"
+    }
+  ],
+  "discos": [
+    {
+      "cod": 1,
+      "nombre": "nombre",
+      "fecha": "16/05/1990",
+      "companyia": {
+        "cod": 1,
+        "nombre": "nombre",
+        "dir": "dir",
+        "fax": "fax",
+        "tfno": "telefono"
+      },
+      "canciones": [
+        {
+          "cod": 1,
+          "titulo": "titulo",
+          "duracion": 4.2
+        },
+        {
+          "cod": 1,
+          "titulo": "titulo",
+          "duracion": 4.2
+        }
+      ]
+    },
+    {
+      "cod": 1,
+      "nombre": "nombre",
+      "fecha": "16/05/1990",
+      "companyia": {
+        "cod": 1,
+        "nombre": "nombre",
+        "dir": "dir",
+        "fax": "fax",
+        "tfno": "telefono"
+      },
+      "canciones": [
+        {
+          "cod": 1,
+          "titulo": "titulo",
+          "duracion": 4.2
+        },
+        {
+          "cod": 1,
+          "titulo": "titulo",
+          "duracion": 4.2
+        }
+      ]
+    }
+  ]
+}
