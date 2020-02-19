@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="445.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienteFTP.ViewController">
+   <children>
+      <Button layoutX="342.0" layoutY="43.0" mnemonicParsing="false" onAction="#xButtonConnectar" prefHeight="25.0" prefWidth="105.0" text="Conectar" fx:id="xButtonConnectar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Separator layoutX="20.0" layoutY="163.0" prefHeight="4.0" prefWidth="439.0" />
+      <Button layoutX="375.0" layoutY="124.0" mnemonicParsing="false" onAction="#xButtonSalir" text="Salir" fx:id="xButtonSalir" />
+      <Label layoutX="119.0" layoutY="26.0" text="Introduce 0 para apagar el servidor" visible="false" fx:id="xLabelInfo" />
+      <Label layoutX="34.0" layoutY="26.0" text="Serivdor:" />
+      <Label layoutX="35.0" layoutY="84.0" text="Usuario:" />
+      <TextField layoutX="97.0" layoutY="22.0" text="localhost" fx:id="xTextFieldServidor" />
+      <TextField layoutX="113.0" layoutY="80.0" prefHeight="25.0" prefWidth="99.0" text="usuario1" fx:id="xTextFieldUsuario" />
+      <PasswordField layoutX="113.0" layoutY="115.0" prefHeight="25.0" prefWidth="99.0" text="usuario1" fx:id="xTextFieldPassword" />
+      <Label layoutX="35.0" layoutY="119.0" text="Contraseña:" />
+      <Button disable="true" layoutX="23.0" layoutY="397.0" mnemonicParsing="false" onAction="#xButtonSubirArchivo" text="Subir Archivo" fx:id="xButtonSubirArchivo" />
+      <Label layoutX="355.0" layoutY="16.0" text="No conectado" textFill="RED" fx:id="xLabelSTATUS">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button disable="true" layoutX="342.0" layoutY="86.0" mnemonicParsing="false" onAction="#xButtonDesconectar" prefHeight="25.0" prefWidth="105.0" text="Desconectar" fx:id="xButtonDesconectar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TreeView layoutX="24.0" layoutY="186.0" prefHeight="193.0" prefWidth="303.0" fx:id="xTreeView" />
+      <Button disable="true" layoutX="119.0" layoutY="397.0" mnemonicParsing="false" onAction="#xButtonDescargarArchivo" text="Descargar Archivo" fx:id="xButtonDescargarArchivo" />
+      <Button disable="true" layoutX="356.0" layoutY="188.0" mnemonicParsing="false" onAction="#xButtonBorrarArchivo" text="Borrar Archivo" fx:id="xButtonBorrarArchivo" />
+      <Button disable="true" layoutX="350.0" layoutY="229.0" mnemonicParsing="false" onAction="#xButtonBorrarDirectorio" text="Borrar Directorio" fx:id="xButtonBorrarDirectorio" />
+      <Button disable="true" layoutX="353.0" layoutY="397.0" mnemonicParsing="false" onAction="#xButtonCrearDirectorio" text="Crear directorio" fx:id="xButtonCrearDirectorio" />
+   </children>
+</AnchorPane>
