@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="Back()">
+        <mat-icon>backspace</mat-icon>
+
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Camarero: {{user}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <h2 text-center>Apertura de caja</h2>
+  
+  <app-pagoscaja-filter (Event)="Reload($event)"></app-pagoscaja-filter>
+
+  
+  <div style="padding: 1%;">
+
+
+        <table style="width:100%" text-center>
+          <tr>
+            <th style="width: 10%;">Hora</th>
+            <th style="width: 15%;">Importe</th>
+            <th style="width: 65%;">Comentario</th>
+            <th style="width: 10%;"></th>
+          </tr>
+        </table>
+        <br>
+        <mat-divider style="padding: 1%;"></mat-divider>
+      <mat-card *ngFor="let p of pagoscajas" style="margin: 1%;">
+        <mat-card-content >
+
+          <table style="width:100%" text-center>
+            <tr>
+              <td style="width: 10%;">{{p.Hora}}</td>
+            <td style="width: 15%;">{{p.Importe}} €</td>
+            <td style="width: 65%;">{{p.Comentario}}</td>
+
+              <td style="width: 10%;">
+
+                <button mat-button [matMenuTriggerFor]="beforeMenu"> <mat-icon>view_headline</mat-icon> </button>
+    
+              <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item (click)="EditPagocaja(p)">Editar</button>
+                
+                <button mat-menu-item (click)="RemovePagocaja(p)">Elminiar</button>
+              </mat-menu>
+
+              </td>
+            </tr >
+          </table>
+            
+        </mat-card-content>
+      </mat-card>
+
+    
+  </div>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button disabled="{{nuevo}}" (click)="AddPagocaja()" color="primary">
+      <ion-icon  name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

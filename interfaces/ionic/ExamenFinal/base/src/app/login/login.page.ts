@@ -14,7 +14,10 @@ import { LoginService } from '../servicios/login.service';
 export class LoginPage implements OnInit {
 
   public user="Admin";
-  public pass="admin";
+  public pass="Admin";
+
+  public Config ={currentuser:this.user};
+  public currentuser;
 
   constructor(
     public loginService: LoginService,
@@ -23,20 +26,8 @@ export class LoginPage implements OnInit {
   ){}
 
   login() {
-    if(this.loginService.login(this.user,this.pass)) {
-      console.log("Login Correco");
-      let token="asdf";
 
-      let u:Isession={username:this.user,token:token};
-      
-      this.storeStorage.setSessionloggedIn(u);
-      this.router.navigateByUrl("/home");
-      
-    } else {
-      console.log("Login Inorreco");
-      this.router.navigateByUrl("/login");
-      
-    }
+    this.loginService.login(this.user,this.pass);
   }
   irConfig(){  
     this.router.navigate(['/config']);
@@ -48,3 +39,25 @@ export class LoginPage implements OnInit {
   }
 
 }
+
+/*
+public Config ={IP:"localost"};
+  public IP="localhost";h
+
+  constructor( public router: Router) {
+    this.Config=JSON.parse(localStorage.getItem('ConfigTest'));
+    if (this.Config) this.IP=this.Config.IP;    
+
+   }
+
+  ngOnInit() {
+  }
+
+  onFormSubmit(){
+    this.Config={IP:this.IP};
+    localStorage.setItem('ConfigTest', JSON.stringify(this.Config));
+    //window.location.reload();
+    //this.router.navigateByUrl('/home');
+    this.router.navigate([ '/login']); 
+  }
+*/

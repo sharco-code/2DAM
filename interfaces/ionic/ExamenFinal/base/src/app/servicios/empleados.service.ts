@@ -24,9 +24,9 @@ export class EmpleadosService {
     
     this.Config=JSON.parse(localStorage.getItem('ConfigTest'));
     if (this.Config)
-        this.API_ENDPOINT = 'http://'+this.Config.IP+':80/api.php';
+        this.API_ENDPOINT = 'http://'+this.Config.IP+':80/api/api.php';
     else
-        this.API_ENDPOINT = 'http://localhost:80/api.php'; 
+        this.API_ENDPOINT = 'http://localhost:80/api/api.php'; 
         
   }
 

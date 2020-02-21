@@ -1,28 +1,28 @@
+
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>    
-        <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Ej 20">
-          <mat-icon>menu</mat-icon>
+    
+    <ion-buttons slot="start">
+      <button mat-icon-button [matMenuTriggerFor]="menu1" aria-label="Ej 20">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu1="matMenu">
+        <button mat-menu-item (click)="Logout()">
+          <mat-icon>directions_run</mat-icon>
+          <span>Cerrar sesión</span>
         </button>
-        <mat-menu #menu1="matMenu">
-          <button mat-menu-item (click)="irConfig()">
-            <mat-icon>settings_applications</mat-icon>
-            <span>Configuración</span>
-          </button>
-          <button mat-menu-item (click)="Exit()">
-            <mat-icon>directions_run</mat-icon>
-            <span>Exit</span>
-          </button>
-        </mat-menu>
-        Examen Jose Galan Simo
-    </ion-title>
+      </mat-menu>
+
+    </ion-buttons>
+    <ion-title>Camarero: {{user}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>  
-  <!--
-<ion-img style="padding: 15%;" src="../assets/images/logo.png"></ion-img> 
-  -->
-   
-  Estas en home
+<ion-content >
+  <h1 text-center>Menu principal</h1>
+  <div padding>
+    <ion-button (click)="Pagoscaja()" size="large" id="login-button" type="submit" expand="block">Apertura de caja</ion-button>
+  </div>
 </ion-content>
+

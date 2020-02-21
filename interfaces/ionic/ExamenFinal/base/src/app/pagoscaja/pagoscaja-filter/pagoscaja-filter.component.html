@@ -1,0 +1,24 @@
+
+<div style="margin: 2%; padding: 2%; border-radius: 25px; border: 2px solid rgb(36, 121, 190);">
+
+  <ion-item>
+    <ion-label>Día:</ion-label>
+    <ion-select okText="Seleccionar" cancelText="Cancelar" #newSelect [(ngModel)]="carbrand" (ionChange)="FechaSeleccionada(carbrand)">
+      <ion-select-option matLine *ngFor="let c of cajas; let i = index" value="{{i}}">{{c.Fecha}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <table style="width:100%" text-center>
+    <tr>
+      <td>
+        <ion-item color="secondary">
+          <ion-label>Importe inicial: {{importeinicial | number:'1.2-2'}} €</ion-label>
+        </ion-item>
+      </td>
+      <td>
+        <ion-button disabled="{{isEnabled}}" (click)="EditAperturacaja()" size="default" id="login-button" type="submit">Modificar</ion-button>
+      </td>
+    </tr>
+    
+  </table>
+</div>

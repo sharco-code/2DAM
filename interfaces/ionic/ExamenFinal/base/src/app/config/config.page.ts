@@ -9,7 +9,7 @@ import { Router} from '@angular/router';
 export class ConfigPage implements OnInit {
 
   public Config ={IP:"localost"};
-  public IP="localhost";h
+  public IP="localhost";
 
   constructor( public router: Router) {
     this.Config=JSON.parse(localStorage.getItem('ConfigTest'));

@@ -13,7 +13,7 @@ import { HomePage } from './home.page';
     FormsModule,
     IonicModule,
     MaterialModule,
-
+    CommonModule,
     RouterModule.forChild([
       {
         path: '',
